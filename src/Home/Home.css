@@ -1,0 +1,17 @@
+h1{
+    color:white;
+}
+
+.Home{
+    display: flex;
+    justify-content: space-between;
+}
+
+.usuario{
+    width: 65px;
+    margin: 25px;
+    border-radius: 15px;
+    cursor: pointer;
+
+}
+

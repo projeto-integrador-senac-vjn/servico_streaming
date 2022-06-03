@@ -1,0 +1,34 @@
+.contpeaky{
+    height: 100vh;
+    background: linear-gradient(90deg, #000, #000e 35%,#0000),
+    url(https://i.pinimg.com/originals/13/89/ee/1389eebe7e05f58f158da51aa33db8f0.gif);  
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 128px 50px 128px;
+    
+
+}
+
+.contbreaking{
+    height: 100vh;
+    background: linear-gradient(90deg, #000, #000e 35%,#0000),
+    url(https://c.tenor.com/fFkxdMd2DFUAAAAC/breaking-bad.gif);  
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 128px 50px 128px;
+    
+
+}
+
+.img{
+    margin-top: 15px;
+    width: 350px;
+    margin-bottom: 50px;
+}
+
+.descricao{
+    max-width: 40%;
+    margin-bottom: 5px;
+    color: #999;
+    
+}

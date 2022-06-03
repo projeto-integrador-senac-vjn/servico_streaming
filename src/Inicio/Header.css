@@ -1,0 +1,79 @@
+.imagemPobre{
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+.botaoEntrar{
+    background-color: red;
+    padding: 8px;
+    border-radius: 5px;
+    color: white;
+    margin: 25px;
+    height: 35px;
+    margin-top: 40px;
+    cursor: pointer;
+    margin-right: 35px;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+h1, p{
+    color: white;
+}
+
+.container{
+    background-image: url(https://raw.githubusercontent.com/karlhadwen/netflix/master/public/images/misc/home-bg.jpg);
+    min-height: 700px;
+}
+
+.filmes h1{
+    font-size: 50px;
+}
+.filmes p{
+    font-size: 25px;
+}
+
+.filmes{
+    text-align: center;
+    padding-top: 65px;
+    margin-top: 15px;
+}
+
+.filmes input{  
+    padding: 15px 95px 15px 15px; 
+}
+.filmes input:hover{
+    border: black;
+}
+.filmes button{
+    padding: 17px 15px 16.1px 15px;
+    background-color: red;
+    color: white;
+    border: 1px solid red;
+}
+
+
+.hrHeader{
+    background-color: rgb(155, 152, 152);
+    margin-top: 300px;
+}
+
+.btnComecar svg{
+    font-size: 13px;
+}
+
+.btnComecar{
+    cursor: pointer; 
+}
+@media screen and (max-width: 620px){
+    .container{
+    background-image: url(https://pbs.twimg.com/profile_images/1436865478803214337/LlBtM7cW_400x400.jpg);
+    text-align: center;
+    }
+    
+}
+

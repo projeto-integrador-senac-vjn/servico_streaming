@@ -1,0 +1,45 @@
+.ativado-1, .ativado-2{
+    color: white;
+}
+.dropdown1, .dropdown-2{
+    color: white;
+}
+.dropdown1, .dropdown2, .dropdown3 {
+    background-color: #303030;
+    max-width: 560px;
+    margin-top: .5px;
+    margin-left: 675px;
+    padding: 0.1px;
+    padding-left: 0.5px;
+    cursor: pointer;
+}
+
+.container1{
+    text-align: center;
+}
+.ativado1, .ativado2, .ativado3{
+    background-color: #303030;
+    max-width: 560px;
+    margin-left: 675px;
+    color: white;
+    margin-top: .3px;
+    cursor: pointer;
+    
+}
+
+.container1{
+    margin-top: 80px;
+}
+
+.hrImagem{
+    background-color: rgb(155, 152, 152);
+    margin-top: 35px;
+    
+}
+
+
+.ativado1, .ativado3{
+font-size: xx-large;
+}
+
+

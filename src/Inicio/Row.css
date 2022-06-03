@@ -1,0 +1,52 @@
+.containerImgTV h1{
+    color: white;
+    font-size: 45px;
+    margin-top: 105px;
+}
+
+.containerImgTV h3{
+    color: white;
+    font-size: 25px;
+}
+
+.imagemTV{
+    width: 40%;
+}
+
+.containerImgTV{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.hrImagemTV{
+    background-color: rgb(155, 152, 152);
+}
+
+.imagemMobile{
+    width: 20%;
+}
+
+.topper{
+    margin-top: 45px;
+}
+
+@media screen and (max-width: 920px){
+    .containerImgTV{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .containerImgTV img{
+        width: auto;
+    }
+}
+@media screen and (max-width: 620px){
+        body{
+            background-color: black;
+        }
+   
+}
+
+.dropdown{
+    text-align: center;
+}
