@@ -20,7 +20,7 @@ function Login() {
                     <input type="password" placeholder='Senha'/>
                 </div> 
             </form>
-            <Link to="/filmes"><button>Entrar</button></Link>
+            <Link to="/home"><button>Entrar</button></Link>
             <p className='sign_up'> Novo por aqui? <Link to="/cadastro">Assine agora </Link> </p>
         </div>
         

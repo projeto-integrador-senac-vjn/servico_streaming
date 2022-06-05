@@ -1,52 +1,51 @@
-import React, { useEffect, useState } from 'react'
-import Requests from './Requests'
-import axios from 'axios'
-import NavBar from './NavBar'
+import React, {useState} from "react";
+import './MovieRow.css'
+import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
+import Tmdb from  './Tmdb'
 
-function Home() {
-    require("./FeaturedMovie.css")
-    
+export default ({title, items}) => {
+    const [scrollX, setScrollX] = useState(0)
 
-    const [movies, setMovies] = useState([])
-
-    const movie = movies[Math.floor(Math.random() * movies.length)]
-
-    let firstDate = new Date(movie?.release_date);
-    
-    let description = movie?.overview;
-    if(description?.length > 200){
-        description = description.substring(0, 200)+ '...'
+    const handleLeftArrow = () => {
+        let x = scrollX + Math.round(window.innerWidth / 2);
+        if(x > 0){
+            x = 0;
+        }
+        setScrollX(x)
     }
 
-    useEffect(()=>{
-        axios.get(Requests.requestPopular).then((response)=>{
-            setMovies(response.data.results)
-        })
-    }, [])
-    console.log(movie)
+    const handleRightArrow = () => {
+        let x = scrollX - Math.round(window.innerWidth / 2);
+        let listW = items.results.length * 150;
+        if((window.innerWidth - listW) > x){
+            x = (window.innerWidth - listW) - 60
+        }
+        setScrollX(x)
 
+    }
 
-  return (
-    <>
-        <NavBar/>
-       <section className="featured" style={{
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundImage: `url(https://image.tmdb.org/t/p/original${movie?.backdrop_path})`
-        }}>
-            <div className="featured--vertical">
-                <div className="featured--horizontal">
-                    <div className="featured--name">{movie?.title}</div>
-                    <div className="featured--info">
-                        <div className="featured--points">{movie?.vote_average} de relevância</div>
-                        <div className="featured--year">{firstDate.getFullYear()}</div>
-                    </div>
-                    <div className="featured--description">{description}</div>
-                </div>
+    return (
+        <div className="movieRow">
+            <h2> {title}</h2>
+            <div className="movieRow--left" onClick={handleLeftArrow}>
+            <FaAngleLeft style={{fontSize: 50}} />    
             </div>
-        </section>
-    </>
-  )
-}
+            <div className="movieRow--right" onClick={handleRightArrow}>
+                <FaAngleRight style={{fontSize: 50}}/>
+            </div>
 
-export default Home
+            <div className="movieRow--listarea">
+                <div className="movieRow--list" style={{
+                    marginLeft: scrollX,
+                    width: items.results.length * 150
+                }}>
+                    {items.results.length > 0 && items.results.map((item, key)=>(
+                        <div key={key} className="movieRow--item">
+                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
+                        </div>
+                    ))}
+                </div>               
+            </div>
+        </div>
+    );
+}
