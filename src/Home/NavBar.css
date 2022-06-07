@@ -27,6 +27,7 @@ header.black{
 
 .header--user{
     height: 35px;
+    cursor: pointer;
 }
 .header--user img{
     height: 100%;

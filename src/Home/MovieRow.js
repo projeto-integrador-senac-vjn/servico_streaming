@@ -2,11 +2,11 @@ import React, {useState, useHistory} from "react";
 import './MovieRow.css'
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import Tmdb from  './Tmdb'
-import { Router } from "react-router-dom";
+import { Router, Link } from "react-router-dom";
 
 export default ({title, items, item}) => {
     
-
+    const id = items
     
     const [scrollX, setScrollX] = useState(0)
 
@@ -29,6 +29,7 @@ export default ({title, items, item}) => {
     }
 
     return (
+        
         <div className="movieRow">
             <h2> {title} </h2>
             <div className="movieRow--left" onClick={handleLeftArrow}>
@@ -37,7 +38,7 @@ export default ({title, items, item}) => {
             <div className="movieRow--right" onClick={handleRightArrow}>
                 <FaAngleRight style={{fontSize: 50}}/>
             </div>
-
+            <Link to="/movie/:id">
             <div className="movieRow--listarea">
                 <div className="movieRow--list" style={{
                     marginLeft: scrollX,
@@ -50,8 +51,11 @@ export default ({title, items, item}) => {
                             <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
                         </div>
                     ))}
-                </div>               
+                </div>              
             </div>
+            </Link>
         </div>
+        
+
     );
 }

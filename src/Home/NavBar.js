@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link} from 'react-router-dom'
 
 function NavBar() {
     require("./NavBar.css")
@@ -24,14 +25,12 @@ function NavBar() {
     <>
        <header className={blackHeader ? 'black' : ''}>
             <div className="header--logo">
-                <a href="/">
+                <Link to="/home">
                     <img  src='https://pobreflix.me/uploads/system_logo/logo_61e7fc761242d.png'/>
-                </a>
+                </Link>
             </div>
             <div className="header--user">
-                <a href="/">
                     <img src="https://i.pinimg.com/originals/b6/77/cd/b677cd1cde292f261166533d6fe75872.png" alt="Usúario" />
-                </a>
             </div>
         </header>
     </>
