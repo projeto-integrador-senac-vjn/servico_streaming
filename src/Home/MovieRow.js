@@ -6,7 +6,7 @@ import { Router, Link } from "react-router-dom";
 
 export default ({title, items, item}) => {
     
-    const id = items
+    
     
     const [scrollX, setScrollX] = useState(0)
 
@@ -32,6 +32,7 @@ export default ({title, items, item}) => {
         
         <div className="movieRow">
             <h2> {title} </h2>
+
             <div className="movieRow--left" onClick={handleLeftArrow}>
             <FaAngleLeft style={{fontSize: 50}} />    
             </div>
@@ -48,7 +49,7 @@ export default ({title, items, item}) => {
                 >
                     {items.results.length > 0 && items.results.map((item, key)=>(
                         <div key={key} className="movieRow--item">
-                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
+                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />                          
                         </div>
                     ))}
                 </div>              

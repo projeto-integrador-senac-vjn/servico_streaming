@@ -5,7 +5,7 @@ import './FeaturedMovie.css';
 export default ({item}) => {
 
     
-
+    
     let firstDate = new Date(item.first_air_date);
     let genres = [];
     for(let i in item.genres) {
@@ -35,6 +35,7 @@ export default ({item}) => {
                     <div className="featured--buttons">
                     </div>
                     <div className="featured--genres"><strong>Gêneros:</strong> {genres.join(', ')}</div>
+                    
                 </div>
             </div>
         </section>
