@@ -1,8 +1,10 @@
 import React from "react";
 import './FeaturedMovie.css';
-import {FaChevronRight} from 'react-icons/fa'
+
 
 export default ({item}) => {
+
+    
 
     let firstDate = new Date(item.first_air_date);
     let genres = [];

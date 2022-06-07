@@ -5,6 +5,8 @@ import Login from './Login/Login';
 import { Routes, Route} from 'react-router-dom'
 import Home from './Home/Home';
 import Filmes from './Filmes/Filmes';
+import Detalhes from './Home/Detalhes';
+
 
 
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/cadastro" element={<Cadastro/>} />
           <Route path="/home" element={<Home/>}/>
           <Route path="/filmes/:nome" element={<Filmes/>}/>
+          <Route path="/movie/:id" element={<Detalhes/>}/>
+         
 
       </Routes>
       
