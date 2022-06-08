@@ -1,11 +1,22 @@
-import React, {useState, useHistory} from "react";
+import React, {useState} from "react";
 import './MovieRow.css'
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import Tmdb from  './Tmdb'
-import { Router, Link } from "react-router-dom";
 
-export default ({title, items, item}) => {
+import { useNavigate } from "react-router-dom";
+
+export default ({title, items}) => {
     
+    const navigate = useNavigate();
+
+    let ano = items.results.id;
+    
+
+    console.log(items);
+
+
+
+
     
     
     const [scrollX, setScrollX] = useState(0)
@@ -39,8 +50,8 @@ export default ({title, items, item}) => {
             <div className="movieRow--right" onClick={handleRightArrow}>
                 <FaAngleRight style={{fontSize: 50}}/>
             </div>
-            <Link to="/movie/:id">
-            <div className="movieRow--listarea">
+            
+            <div className="movieRow--listarea" onClick={() => navigate(`/movie/${items}`)}>
                 <div className="movieRow--list" style={{
                     marginLeft: scrollX,
                     width: items.results.length * 150
@@ -49,12 +60,13 @@ export default ({title, items, item}) => {
                 >
                     {items.results.length > 0 && items.results.map((item, key)=>(
                         <div key={key} className="movieRow--item">
-                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />                          
+                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
+                                                    
                         </div>
                     ))}
                 </div>              
             </div>
-            </Link>
+            
         </div>
         
 
