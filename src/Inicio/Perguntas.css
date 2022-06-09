@@ -8,7 +8,7 @@
     background-color: #303030;
     max-width: 560px;
     margin-top: .5px;
-    margin-left: 675px;
+    margin-left: 390px;
     padding: 0.1px;
     padding-left: 0.5px;
     cursor: pointer;
@@ -20,7 +20,7 @@
 .ativado1, .ativado2, .ativado3{
     background-color: #303030;
     max-width: 560px;
-    margin-left: 675px;
+    margin-left: 390px;
     color: white;
     margin-top: .3px;
     cursor: pointer;
@@ -40,6 +40,12 @@
 
 .ativado1, .ativado3{
 font-size: xx-large;
+}
+
+@media  (max-width: 1200px){
+    .ativado1, .ativado2, .ativado3{
+        margin-left: 570px;
+    }
 }
 
 
