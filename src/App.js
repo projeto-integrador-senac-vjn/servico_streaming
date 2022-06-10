@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 import Cadastro from './Cadastro/Cadastro';
 import Inicio from "./Inicio/Inicio"

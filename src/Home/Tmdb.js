@@ -20,25 +20,17 @@ const basicFetch = async (endpoint) => {
     return json
 }
 
+
+
 export default {
     getHomeList: async () => {
         return [
-            {
-                slug: "originals",
-                title: "Originais da Pobreflix",
-                items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
-                
-            },
-            {
-                slug: "trending",
-                title: "Recomendados para você",
-                items: await basicFetch(`/trending/all/week?language=pt-BR&api_key=${API_KEY}`)
-            },
             {
                 slug: "toprated",
                 title: "Em Alta",
                 items: await basicFetch(`/movie/top_rated?language=pt-BR&api_key=${API_KEY}`)
             },
+        
             {
                 slug: "action",
                 title: "Ação",
@@ -91,5 +83,16 @@ export default {
         }
 
         return info
+    },
+        getOriginals: async() => {
+            return [
+            
+                {
+                    slug: "originals",
+                    title: "Originais da Pobreflix",
+                    items: await basicFetch(`/discover/tv?with_network=213&language=pt-BR&api_key=${API_KEY}`)
+                    
+                }
+            ]
+        }
     }
-}

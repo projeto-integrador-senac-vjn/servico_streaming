@@ -6,7 +6,7 @@ function NavBar() {
     require("./NavBar.css")
 
     const [blackHeader, setBlackHeader] = useState(false)
-    const [ativado, setAtivado] = useState(false)
+    
 
     useEffect(()=> {
         const scrollListener = () => {
@@ -28,7 +28,7 @@ function NavBar() {
        <header className={blackHeader ? 'black' : ''}>
             <div className="header--logo">
                 <Link to="/home">
-                    <img  src='https://pobreflix.me/uploads/system_logo/logo_61e7fc761242d.png'/>
+                    <img  src='https://pobreflix.me/uploads/system_logo/logo_61e7fc761242d.png' alt='logo/pobreflix'/>
                 </Link>
             </div>
             <Menu/>

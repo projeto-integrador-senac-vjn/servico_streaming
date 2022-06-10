@@ -1,22 +1,12 @@
 import React, {useState} from "react";
 import './MovieRow.css'
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
-import Tmdb from  './Tmdb'
-
-import { useNavigate } from "react-router-dom";
 import ModalDetalhes from "./ModalDetalhes";
 
 export default ({title, items}) => {
-    
-  
 
-   
-
-
-
-
-    
-    
+    console.log(items);
+     
     const [scrollX, setScrollX] = useState(0)
 
     const handleLeftArrow = () => {
@@ -41,7 +31,6 @@ export default ({title, items}) => {
         
         <div className="movieRow">
             <h2> {title} </h2>
-
             <div className="movieRow--left" onClick={handleLeftArrow}>
             <FaAngleLeft style={{fontSize: 50}} />    
             </div>

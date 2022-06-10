@@ -1,0 +1,12 @@
+.iconX{
+    margin-left: 100vh;
+    cursor: pointer;
+    
+}
+
+.MyList{
+    background-color: rgba(42,42,42,0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
