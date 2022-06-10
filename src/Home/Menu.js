@@ -6,6 +6,7 @@ import MenuItem from '@mui/material/MenuItem';
 import EditIcon from '@mui/icons-material/Edit';
 import Divider from '@mui/material/Divider';
 import LogoutIcon from '@mui/icons-material/Logout';
+import BasicModal from './ModalLogout'
 
 
 const StyledMenu = styled((props) => (
@@ -81,8 +82,12 @@ export default function CustomizedMenus() {
           Sua Lista
         </MenuItem>
         <Divider sx={{ my: 0.5 }} />
+        <MenuItem>
           <LogoutIcon />
-          <ModalLogout/>
+          <BasicModal/>
+        </MenuItem>
+          
+        
       </StyledMenu>
     </div>
   );

@@ -4,15 +4,13 @@ import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import Tmdb from  './Tmdb'
 
 import { useNavigate } from "react-router-dom";
+import ModalDetalhes from "./ModalDetalhes";
 
 export default ({title, items}) => {
     
-    const navigate = useNavigate();
+  
 
-    let ano = items.results.id;
-    
-
-    console.log(items);
+   
 
 
 
@@ -51,7 +49,7 @@ export default ({title, items}) => {
                 <FaAngleRight style={{fontSize: 50}}/>
             </div>
             
-            <div className="movieRow--listarea" onClick={() => navigate(`/movie/${items}`)}>
+            <ModalDetalhes >
                 <div className="movieRow--list" style={{
                     marginLeft: scrollX,
                     width: items.results.length * 150
@@ -65,7 +63,7 @@ export default ({title, items}) => {
                         </div>
                     ))}
                 </div>              
-            </div>
+            </ModalDetalhes>
             
         </div>
         

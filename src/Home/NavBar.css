@@ -51,13 +51,19 @@ header.black{
    width: 100px;
    height: 30px;
    border-radius: 5px;
+   cursor: pointer;
+   font-size: large;
 }
 
 .contmodal button:first-child{
     background-color: red;
     color: white;
 }
+.contmodal button:first-child:hover{
+    background-color: rgb(171, 53, 53);
+}
 
 .cancelar{
     color: blue;
 }
+
