@@ -3,7 +3,7 @@ import './MovieRow.css'
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
 import ModalDetalhes from "./ModalDetalhes";
 
-export default ({title, items}) => {
+export default ({title, items, onItemSelected}) => {
 
     console.log(items);
      
@@ -38,7 +38,8 @@ export default ({title, items}) => {
                 <FaAngleRight style={{fontSize: 50}}/>
             </div>
             
-            <ModalDetalhes >
+            
+            {/*<ModalDetalhes >*/}
                 <div className="movieRow--list" style={{
                     marginLeft: scrollX,
                     width: items.results.length * 150
@@ -46,13 +47,17 @@ export default ({title, items}) => {
                 }}
                 >
                     {items.results.length > 0 && items.results.map((item, key)=>(
-                        <div key={key} className="movieRow--item">
+                        
+                        <div key={key} className="movieRow--item" onClick={() => { onItemSelected(item.id) }}>
                             <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
-                                                    
+
+                                               
                         </div>
+                        
+                         
                     ))}
                 </div>              
-            </ModalDetalhes>
+            {/*</ModalDetalhes>*/}
             
         </div>
         

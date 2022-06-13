@@ -5,10 +5,10 @@ import Modal from '@mui/material/Modal';
 import "./ModalDetalhes.css"
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
-import API_KEY from './Tmdb'
 
 
 
+const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 
 const style = {
   position: 'absolute',
@@ -23,39 +23,56 @@ const style = {
   height: '90vh',
 };
 
-export default function ModalDetalhes({children}) {
+export default function ModalDetalhes({children, id}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [content, setContent] = React.useState();
+  const [movie, setMovie] = React.useState();
+
+  
   
 
   const fetchData = async() => {
-    const {data} = await axios.get(`
-    https://api.themoviedb.org/3/movie/{movie_id}?api_key=${API_KEY}&language=pt-BR`)
-
-    setContent(data)
+    if (id) {
+      axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&language=pt-BR`)
+      .then((res) => {
+        setMovie(res.data)
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
+    }
   }
 
   React.useEffect(() => {
-    fetchData()
-  }, [])
+    fetchData();
+  }, [id]); 
+
+  
   
 
   return (
-    <div>
-      <Button onClick={handleOpen} className="movieRow--listarea"> { children } </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <CloseIcon className='iconX' onClick={handleClose}/>
-          <button className='MyList'>Minha Lista</button>
-        </Box>
-      </Modal>
-    </div>
+    <>
+    {(movie) && (
+      
+       <div>
+         <p>{movie.overview}</p>
+       <Button onClick={handleOpen} className="movieRow--listarea"> { children } </Button>
+       <Modal
+         open={open}
+         onClose={handleClose}
+         aria-labelledby="modal-modal-title"
+         aria-describedby="modal-modal-description"
+       >
+         <Box sx={style}>
+           <CloseIcon className='iconX' onClick={handleClose}/>
+             <p>{movie.overview}</p>
+             
+         </Box>
+       </Modal>
+     </div>
+    )}
+   
+    </>
   );
 }

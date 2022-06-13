@@ -4,6 +4,7 @@ import Tmdb from "./Tmdb";
 import MovieRow from "./MovieRow";
 import FeaturedMovie from "./FeaturedMovie";
 import NavBar from "./NavBar";
+import ModalDetalhes from "./ModalDetalhes";
 
 
 export default () => {
@@ -11,6 +12,15 @@ export default () => {
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
   const [originais, setOriginais] = useState([]);
+
+  const [itemId, setItemId] = useState();
+
+  
+
+  const itemSelected = (itemId) => {
+    setItemId(itemId);
+
+  };
 
   useEffect(()=> {
     const loadAll = async () => {
@@ -46,7 +56,7 @@ export default () => {
 
       <section className="lists">
         {movieList.map((item, key) => (
-          <MovieRow key={key} title={item.title} items={item.items} />
+          <MovieRow key={key} title={item.title} items={item.items} onItemSelected={itemSelected} />
         ))}
       </section>
 
@@ -56,6 +66,9 @@ export default () => {
           <img src="https://i.gifer.com/8Etj.gif" alt="Carregando" />
       </div>
       }
+
+      <ModalDetalhes id={itemId} />
+
     </div>
   );
 }

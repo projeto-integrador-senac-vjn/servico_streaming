@@ -1,5 +1,14 @@
 .featured{
     height: 100vh;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    overflow: hidden;
+}
+
+.featured::-webkit-scrollbar {
+    width: 0px;
 }
 
 .featured--vertical{
