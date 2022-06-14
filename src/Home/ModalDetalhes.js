@@ -26,8 +26,9 @@ const style = {
 export default function ModalDetalhes({children, id}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  
   const [movie, setMovie] = React.useState();
+  const handleClose = () => setMovie(false);
 
   
   
@@ -55,22 +56,15 @@ export default function ModalDetalhes({children, id}) {
     <>
     {(movie) && (
       
-       <div>
-         <p>{movie.overview}</p>
-       <Button onClick={handleOpen} className="movieRow--listarea"> { children } </Button>
-       <Modal
-         open={open}
-         onClose={handleClose}
-         aria-labelledby="modal-modal-title"
-         aria-describedby="modal-modal-description"
-       >
-         <Box sx={style}>
-           <CloseIcon className='iconX' onClick={handleClose}/>
-             <p>{movie.overview}</p>
-             
-         </Box>
-       </Modal>
-     </div>
+       <div  className='modal'>
+          
+          <div className='container'>
+            <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
+            <p>{movie.original_title}</p>
+                <p>{movie.overview}</p>
+                <CloseIcon onClick={handleClose}/>      
+          </div>
+       </div>
     )}
    
     </>

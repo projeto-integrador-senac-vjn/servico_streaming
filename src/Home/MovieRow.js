@@ -5,7 +5,7 @@ import ModalDetalhes from "./ModalDetalhes";
 
 export default ({title, items, onItemSelected}) => {
 
-    console.log(items);
+    
      
     const [scrollX, setScrollX] = useState(0)
 
