@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.container{
+.containermodal{
     background-color: #141414;
     color: grey;
     width: 60%;
@@ -34,6 +34,6 @@
 
 .poster{
     width: 100%;
-    max-height: 15%;
+    max-height: 10%;
     margin-top: 1000px;
 }

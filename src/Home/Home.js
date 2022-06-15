@@ -20,6 +20,8 @@ export default () => {
   const itemSelected = (itemId) => {
     setItemId(itemId);
 
+    window.scroll(0, -500)
+
   };
 
   useEffect(()=> {
