@@ -50,6 +50,7 @@ export default function ModalDetalhes({id}) {
   }, [id]); 
 
   
+  console.log(movie);
   
 
   return (
@@ -57,13 +58,17 @@ export default function ModalDetalhes({id}) {
     {(movie) && (
       
        <div  className='modal'>
-          
           <div className='container'>
-            <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} />
-            <p>{movie.original_title}</p>
-                <p>{movie.overview}</p>
-                <CloseIcon onClick={handleClose}/>      
-          </div>
+              <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} />
+              <p>{movie.original_title}</p>
+              <div className='containermodal'>
+                <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
+                <p>{movie.title}</p>
+                    <p>{movie.overview}</p>
+                    <p>{movie.vote_average} de relevancia</p>
+                    <CloseIcon onClick={handleClose}/>      
+              </div>
+            </div>
        </div>
     )}
    
