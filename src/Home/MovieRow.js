@@ -39,7 +39,7 @@ export default ({title, items, onItemSelected}) => {
             </div>
             
             
-            {/*<ModalDetalhes >*/}
+            
                 <div className="movieRow--list" style={{
                     marginLeft: scrollX,
                     width: items.results.length * 150
@@ -49,15 +49,13 @@ export default ({title, items, onItemSelected}) => {
                     {items.results.length > 0 && items.results.map((item, key)=>(
                         
                         <div key={key} className="movieRow--item" onClick={() => { onItemSelected(item.id) }}>
-                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
-
-                                               
+                            <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />                                 
                         </div>
                         
                          
                     ))}
                 </div>              
-            {/*</ModalDetalhes>*/}
+            
             
         </div>
         

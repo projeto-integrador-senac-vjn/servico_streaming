@@ -23,7 +23,7 @@ const style = {
   height: '90vh',
 };
 
-export default function ModalDetalhes({children, id}) {
+export default function ModalDetalhes({id}) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   
@@ -59,7 +59,7 @@ export default function ModalDetalhes({children, id}) {
        <div  className='modal'>
           
           <div className='container'>
-            <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
+            <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} />
             <p>{movie.original_title}</p>
                 <p>{movie.overview}</p>
                 <CloseIcon onClick={handleClose}/>      
