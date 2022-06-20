@@ -3,10 +3,6 @@
     
 }
 
-.movieRow::-webkit-scrollbar {
-    width: 0px;
-}
-
 .movieRow h2{
     margin: 0px 0px 0px 30px;
     -webkit-user-select: none;  
@@ -15,7 +11,7 @@
     user-select: none;
 }
 .movieRow--listarea{
-    overflow-x: hidden;
+    overflow: hidden;
     padding-left: 30px;
 }
 .movieRow--list{

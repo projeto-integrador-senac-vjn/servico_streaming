@@ -20,7 +20,7 @@ export default () => {
   const itemSelected = (itemId) => {
     setItemId(itemId);
 
-    window.scroll(0, -500)
+   
 
   };
 
@@ -70,6 +70,7 @@ export default () => {
       }
 
       <ModalDetalhes id={itemId} />
+
 
     </div>
   );

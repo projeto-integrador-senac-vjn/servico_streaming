@@ -62,6 +62,7 @@ export default {
                 items: await basicFetch(`/discover/movie?popular&language=pt-BR&api_key=${API_KEY}`)
             },
             
+            
 
         ];
     },

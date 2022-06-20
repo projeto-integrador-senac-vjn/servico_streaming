@@ -1,6 +1,4 @@
-body{
-    background-image: url(https://assets.nflxext.com/ffe/siteui/vlv3/970e664f-2df4-47ce-b4fa-446082f5abc1/cffcced5-0e09-4a29-beb5-ae9c4fcbec8e/BR-pt-20220523-popsignuptwoweeks-perspective_alpha_website_large.jpg);
-}
+
 h2{
     color: white;
     margin-right: 250px;
@@ -15,7 +13,7 @@ input{
     text-align: center;
 }
 
-body::before{
+.header::before{
     content: '';
     background-color: rgb(0, 0, 0, 0.5);
     width: 100%;
@@ -27,10 +25,10 @@ body::before{
     right: 0;
 }
 
-.header{
+.header img{
     padding: 20px 50px;
     position: relative;
-    z-index: 10;
+    z-index: 35;
 }
 
 .login h2{
@@ -101,4 +99,11 @@ body::before{
 }
 .sign_up a:hover{
     text-decoration: underline;
+}
+
+.loginImg{
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
 }

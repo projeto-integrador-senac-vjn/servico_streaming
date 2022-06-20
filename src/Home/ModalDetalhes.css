@@ -1,39 +1,70 @@
-.iconX{
-    margin-left: 100vh;
-    cursor: pointer;
-    
-}
-
-.MyList{
-    background-color: rgba(42,42,42,0.6);
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
+.modal--content{
+    background-color: #141414;
+    border-radius: 10px 10px 0px 0px;
+    max-width: 801px;
+    height: 550px;
+    margin: 80px auto 0 auto;
 }
 
 .modal{
-    width: 100%;
-    height: 300%;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 10000;
-    background-color: rgba(0, 0, 0, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.containermodal{
-    background-color: #141414;
-    color: grey;
-    width: 60%;
-    height: 150%;
-
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .poster{
-    width: 100%;
-    max-height: 10%;
-    margin-top: 1000px;
+    width: 59.4%;
+    height: 45vh;
+    border-radius: 10px 10px 0px 0px;
+    top: 79px;
+    position: absolute;
+}
+
+.iconX{
+    margin-left: 770px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    margin-top: 5px;
+}
+
+.movieTitle{
+    font-size: xx-large;
+    margin-top: 250px;
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 15px;
+}
+
+
+.flex{
+    display: flex;
+    margin-bottom: 10px;
+    position: relative;
+    
+}
+
+.relevance{
+    color: #46d369;
+}
+
+.flex p, svg{
+    margin-left: 15px;
+}
+
+.release{
+    margin-left: 45px;
+}
+
+.flex svg{
+    cursor: pointer;
+    margin-top: -3px;
+    margin-left: 35px;
+}
+
+.overview{
+    margin: 15px;
 }

@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import './NavBar.css'
+import CloseIcon from '@mui/icons-material/Close';
 
 
 
@@ -19,13 +20,16 @@ const style = {
 };
 
 export default function BasicModal() {
+  require("./NavBar.css")
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
   return (
     <div>
-      <Button onClick={handleOpen}>Sair</Button>
+      <hr/>
+      <Button className='button' onClick={handleOpen}>Sair</Button>
+      
       <Modal
         open={open}
         onClose={handleClose}
@@ -33,11 +37,14 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style} className="modal">
+        <CloseIcon className='iconx' onClick={handleClose}/>
         <h3 >Tem Certeza?</h3>
-        <div className='contmodal'>
-            <button>Sair</button>
-            <button className='cancelar' onClick={handleClose}>Cancelar</button>
-        </div>
+        <br/>
+        <br/>
+        <button>Sair</button>
+      
+            
+        
         </Box>
       </Modal>
     </div>

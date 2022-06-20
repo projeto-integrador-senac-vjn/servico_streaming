@@ -5,6 +5,8 @@ import Inicio from "./Inicio/Inicio"
 import Login from './Login/Login';
 import { Routes, Route} from 'react-router-dom'
 import Home from './Home/Home';
+import Painel from './Home/Painel';
+
 
 
 
@@ -21,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login/>} />
           <Route path="/cadastro" element={<Cadastro/>} />
           <Route path="/home" element={<Home/>}/>
+          <Route path="/painel" element={<Painel/>}/>
          
 
       </Routes>

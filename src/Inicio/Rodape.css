@@ -2,9 +2,14 @@
     display: flex;
     justify-content: space-evenly;
     margin-top: 75px;
+
     
 }
 
 .Rodape p{
     color: #757575;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
 }

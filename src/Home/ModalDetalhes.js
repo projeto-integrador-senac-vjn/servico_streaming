@@ -1,37 +1,22 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Modal from '@mui/material/Modal';
 import "./ModalDetalhes.css"
 import CloseIcon from '@mui/icons-material/Close';
 import axios from 'axios';
+import  ReactDOM  from 'react-dom';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 
 
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
+const modal = document.getElementById('modal')
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 1000,
-  bgcolor: '#141414',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-  height: '90vh',
-};
 
-export default function ModalDetalhes({id}) {
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  
+export default function ModalDetalhes({id}) { 
   const [movie, setMovie] = React.useState();
   const handleClose = () => setMovie(false);
-
-  
-  
 
   const fetchData = async() => {
     if (id) {
@@ -50,28 +35,31 @@ export default function ModalDetalhes({id}) {
   }, [id]); 
 
   
-  console.log(movie);
-  
 
-  return (
+  return ReactDOM.createPortal(
     <>
-    {(movie) && (
-      
-       <div  className='modal'>
-          <div className='container'>
-              <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} />
-              <p>{movie.original_title}</p>
-              <div className='containermodal'>
-                <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.original_title} />
-                <p>{movie.title}</p>
-                    <p>{movie.overview}</p>
-                    <p>{movie.vote_average} de relevancia</p>
-                    <CloseIcon onClick={handleClose}/>      
+    {(movie) && (  
+       <div className="modal" >
+          <div className='modal--content'>
+              <div>
+                  <CloseIcon className='iconX' onClick={handleClose}/> 
               </div>
+                
+              <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} /> 
+              <p className='movieTitle'>{movie.title}</p>
+              <div className='flex'>   
+                    <p className='relevance'>{movie.vote_average} de relevância</p> 
+                    <p className='release'>{movie.release_date}</p>
+                    <StarBorderIcon/>
+                    <FavoriteBorderIcon/>                                
+              </div>
+                    <p className='overview'>{movie.overview}</p>
+                    
             </div>
        </div>
     )}
    
-    </>
+    </>,
+    modal,
   );
 }
