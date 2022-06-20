@@ -1,10 +1,10 @@
 
-h2{
+.login h2{
     color: white;
     margin-right: 250px;
 }
 
-input{
+.login input{
     padding: 10px;
     border-radius: 5px;
 }

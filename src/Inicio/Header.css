@@ -27,7 +27,7 @@ h1, p{
 
 .container{
     background-image: url(https://raw.githubusercontent.com/karlhadwen/netflix/master/public/images/misc/home-bg.jpg);
-    min-height: 700px;
+    max-height: 650px;
 }
 
 .filmes h1{
@@ -35,6 +35,7 @@ h1, p{
 }
 .filmes p{
     font-size: 25px;
+    margin-top: 10px;
 }
 
 .filmes{
@@ -43,12 +44,7 @@ h1, p{
     margin-top: 15px;
 }
 
-.filmes input{  
-    padding: 15px 95px 15px 15px; 
-}
-.filmes input:hover{
-    border: black;
-}
+
 .filmes button{
     padding: 17px 15px 16.1px 15px;
     background-color: red;
@@ -59,15 +55,15 @@ h1, p{
 
 .hrHeader{
     background-color: rgb(155, 152, 152);
-    margin-top: 300px;
+    margin-top: 100px;
 }
 
-.btnComecar svg{
-    font-size: 13px;
-}
+
 
 .btnComecar{
     cursor: pointer; 
+    margin-top: 15px;
+    border-radius: 10px;
 }
 @media screen and (max-width: 620px){
     .container{

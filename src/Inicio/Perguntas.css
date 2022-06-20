@@ -9,7 +9,7 @@
     max-width: 560px;
     margin-top: .5px;
     margin-left: 400px;
-    padding: 0.1px;
+    padding: 15px;
     padding-left: 0.5px;
     cursor: pointer;
 }
@@ -19,15 +19,17 @@
 }
 .ativado1, .ativado2, .ativado3{
     background-color: #303030;
-    max-width: 560px;
+    max-width: 545px;
     margin-left: 400px;
     color: white;
-    margin-top: .3px;    
+    margin-top: .3px;   
+    padding: 15px;
+    margin-bottom: 15px; 
     
 }
 
 .container1{
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .hrImagem{
@@ -35,11 +37,11 @@
     margin-top: 35px;
     
 }
-
-
-.ativado1, .ativado3{
-font-size: xx-large;
+.perguntas{
+    margin-bottom: 15px;
 }
+
+
 
 
 

@@ -17,9 +17,12 @@ const Header = () => {
                     </div>
                     <div className="filmes">
                         <h1> Filmes, séries e muito  <br/>   mais. Sem limites.</h1>
-                        <p> Assista onde quiser. Cancele quando quiser</p>
-                        <p>Pronto para assistir? Informe seu email para criar ou reiniciar sua assinatura.</p>
-                        <input placeholder="Email"/><button className='btnComecar'> Começar  </button>
+                        <p> Assista onde quiser</p>
+                        <p>Pronto para assistir? Clique para fazer sua assinatura.</p>
+                        <Link to="/cadastro">
+                            <button className='btnComecar'> Começar  </button>
+                        </Link>
+                        
                         <hr className="hrHeader"/>
                 </div>
             </div>

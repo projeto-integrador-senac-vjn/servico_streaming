@@ -1,13 +1,14 @@
 .Rodape{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 75px;
+    margin-top: 60px;
 
     
 }
 
 .Rodape p{
     color: #757575;
+    margin: 7px;
     -webkit-user-select: none;  
     -moz-user-select: none;    
     -ms-user-select: none;      
