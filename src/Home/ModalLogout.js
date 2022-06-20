@@ -36,7 +36,7 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style} className="modal">
+        <Box sx={style} className="modalLogout">
         <CloseIcon className='iconx' onClick={handleClose}/>
         <h3 >Tem Certeza?</h3>
         <br/>

@@ -34,28 +34,31 @@ header.black{
     border-radius: 3px;
 }
 
-.modal h3{
+.modalLogout h3{
     position: absolute;
     top: 60px;
     text-align: center; 
     font-size: x-large;
+    margin-left: 140px;
 }
 
 
-.modal button{
+.modalLogout button{
    width: 80px;
    height: 30px;
    border-radius: 5px;
    cursor: pointer;
    font-size: large;
    margin-top: 120px;
+   margin-left: 165px;
+
 }
 
-.modal button{
+.modalLogout button{
     background-color: red;
     color: white;
 }
-.modal button:hover{
+.modalLogout button:hover{
     background-color: rgb(171, 53, 53);
 }
 

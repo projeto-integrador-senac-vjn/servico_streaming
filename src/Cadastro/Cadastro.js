@@ -23,7 +23,9 @@ function Cadastro() {
                     <input type="password" placeholder='Confirmar Senha...'/>
                 </div> 
             </form>
-             <Link to="/login"><button>Cadastrar</button> </Link> 
+             <Link to="/login"><button type='submit'>Cadastrar</button> </Link> 
+             <p className='sign_up'>Já possui uma conta? <Link to="/login">Logar </Link></p>
+
         </div>
         </div>
         
