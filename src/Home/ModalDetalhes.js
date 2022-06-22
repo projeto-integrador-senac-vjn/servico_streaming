@@ -19,7 +19,7 @@ export default function ModalDetalhes({id}) {
   const [movie, setMovie] = React.useState();
   const [video, setVideo] = React.useState();
   const handleClose = () => setMovie(false);
-  const [date, setDate] = React.useState([]);
+  
 
   const fetchData = async() => {
     if (id) {
@@ -40,6 +40,7 @@ export default function ModalDetalhes({id}) {
     fetchData();
     
   }, [id]); 
+  console.log(video)
 
 
   return ReactDOM.createPortal(
@@ -60,7 +61,7 @@ export default function ModalDetalhes({id}) {
                     <FavoriteBorderIcon/>                                
               </div>
                     <p className='overview'>{movie.overview}</p>
-                   
+
             </div>
        </div>
     )}
