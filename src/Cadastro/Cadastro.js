@@ -11,6 +11,8 @@ function Cadastro() {
         const email = document.querySelector("input[name='email']").value
         const senha = document.querySelector("input[name='senha']").value
 
+       
+
         const obj = {
             nome: nome,
             email: email,
