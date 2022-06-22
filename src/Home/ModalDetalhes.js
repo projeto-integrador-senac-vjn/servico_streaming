@@ -34,22 +34,11 @@ export default function ModalDetalhes({id}) {
     }
   }
 
-  const fetchVideo = async() => {
-    if (id) {
-      axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=pt-BR`)
-      .then((res) => {
-        setVideo(res.data.results[0]?.key)
-        
-      })
-      .catch((error) => {
-        alert(error.message)
-      })
-    }
-  }
+  
 
   React.useEffect(() => {
     fetchData();
-    fetchVideo();
+    
   }, [id]); 
 
 
@@ -71,7 +60,7 @@ export default function ModalDetalhes({id}) {
                     <FavoriteBorderIcon/>                                
               </div>
                     <p className='overview'>{movie.overview}</p>
-              <a className='trailer' target="_blank" href={`https://www.youtube.com/watch?v=${video}`}><YouTubeIcon className="youtubeIcon"/> Trailer </a>      
+                   
             </div>
        </div>
     )}
