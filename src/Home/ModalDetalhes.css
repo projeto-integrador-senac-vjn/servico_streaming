@@ -36,7 +36,7 @@
 .movieTitle{
     font-size: xx-large;
     margin-top: 370px;
-    margin-top: 250px;
+    margin-top: 330px;
     position: relative;
     margin-bottom: 10px;
     padding-left: 15px;
@@ -90,3 +90,31 @@
     margin-left: -3px;
     margin-bottom: -5px;
 }
+
+@media screen and (min-width: 1000px){
+    .poster{
+        width: 42.1%;
+    }
+
+    .modal--content{
+        height: 800px;
+    }
+    .movieTitle{
+        margin-top: 370px;
+    }
+}
+
+
+@media screen and (max-width: 1000px){
+    .poster{
+        width: 82.5%;
+    }
+
+    .modal--content{
+        height: 800px;
+    }
+    .movieTitle{
+        margin-top: 370px;
+    }
+}
+

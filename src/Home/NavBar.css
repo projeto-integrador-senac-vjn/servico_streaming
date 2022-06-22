@@ -92,4 +92,10 @@ header.black{
     padding: 5px;
 }
 
+@media screen and (min-width: 1000px){
+    .menulist{
+        margin-left: 92%;
+    }
+}
+
 

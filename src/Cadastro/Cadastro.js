@@ -3,6 +3,30 @@ import { Link } from 'react-router-dom'
 
 function Cadastro() {
     require("../Login/Login.css")
+
+    const registrar = (e) => {
+        e.preventDefault();
+
+        const nome = document.querySelector("input[name='nome']").value
+        const email = document.querySelector("input[name='email']").value
+        const senha = document.querySelector("input[name='senha']").value
+
+        const obj = {
+            nome: nome,
+            email: email,
+            senha: senha
+        }
+
+        const axios = require('axios');
+
+        axios.post('http://localhost:3001/usuarios', obj)
+        .then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error)
+        })
+    }
   return (
     <>
          <div>
@@ -12,18 +36,19 @@ function Cadastro() {
             <img src='https://pobreflix.me/uploads/system_logo/logo_61e7fc761242d.png' alt='Pobreflix/logo'/>
         <div className='login'>
             <h2> Cadastrar </h2>
-            <form>
-                <div className='input'>
-                    <input type="email" placeholder='Email...'/>
+            <form onSubmit={(e) => registrar(e)}>
+            <div className='input'>
+                    <input id="email"  name="nome" type="text" placeholder='Nome...'/>
                 </div>
                 <div className='input'>
-                    <input type="password" placeholder='Senha...'/>
-                </div> 
+                    <input id="email"  name="email" type="email" placeholder='Email...'/>
+                </div>
                 <div className='input'>
-                    <input type="password" placeholder='Confirmar Senha...'/>
+                    <input name="senha" type="password" placeholder='Senha...'/>
                 </div> 
+               
+                <button >cadastrar</button>
             </form>
-             <Link to="/login"><button type='submit'>Cadastrar</button> </Link> 
              <p className='sign_up'>Já possui uma conta? <Link to="/login">Logar </Link></p>
 
         </div>
