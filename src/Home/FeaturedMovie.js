@@ -27,7 +27,7 @@ export default ({item}) => {
                 <div className="featured--horizontal">
                     <div className="featured--name">{item.original_name}</div>
                     <div className="featured--info">
-                        <div className="featured--points">{item.vote_average} de relevância</div>
+                        <div className="featured--points">{item.vote_average} de pontos</div>
                         <div className="featured--year">{firstDate.getFullYear()}</div>
                         <div className="featured--seasons">{item.number_of_seasons} temporada{item.number_of_seasons !== 1? 's' : ''} </div>
                     </div>
