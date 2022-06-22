@@ -2,7 +2,7 @@
     background-color: #141414;
     border-radius: 10px 10px 0px 0px;
     max-width: 801px;
-    height: 550px;
+    height: 620px;
     margin: 80px auto 0 auto;
 }
 
@@ -16,7 +16,7 @@
 }
 
 .poster{
-    width: 59.4%;
+    width: 83%;
     height: 45vh;
     border-radius: 10px 10px 0px 0px;
     top: 79px;
@@ -33,7 +33,7 @@
 
 .movieTitle{
     font-size: xx-large;
-    margin-top: 270px;
+    margin-top: 370px;
     position: relative;
     margin-bottom: 10px;
     padding-left: 15px;
