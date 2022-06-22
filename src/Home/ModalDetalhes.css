@@ -18,6 +18,8 @@
 .poster{
     width: 83%;
     height: 45vh;
+    width: 59.4%;
+    height: 40vh;
     border-radius: 10px 10px 0px 0px;
     top: 79px;
     position: absolute;
@@ -34,6 +36,7 @@
 .movieTitle{
     font-size: xx-large;
     margin-top: 370px;
+    margin-top: 250px;
     position: relative;
     margin-bottom: 10px;
     padding-left: 15px;
@@ -67,4 +70,23 @@
 
 .overview{
     margin: 15px;
+}
+
+.trailer{
+    text-decoration: none;
+    background-color: #ffff;
+    color: #141414;
+    padding: 2px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.youtubeIcon{
+    margin-top: 3px;
+    margin-right: 5px;
+    margin-left: -3px;
+    margin-bottom: -5px;
 }
