@@ -118,3 +118,16 @@
     }
 }
 
+@media screen and (max-width: 1600px){
+    .poster{
+        width: 48.2%;
+    }
+
+    .modal--content{
+        height: 800px;
+    }
+    .movieTitle{
+        margin-top: 370px;
+    }
+}
+

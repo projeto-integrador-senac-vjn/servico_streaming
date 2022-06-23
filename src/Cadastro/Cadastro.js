@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 function Cadastro() {
     require("../Login/Login.css")
@@ -7,27 +8,24 @@ function Cadastro() {
     const registrar = (e) => {
         e.preventDefault();
 
-        const nome = document.querySelector("input[name='nome']").value
-        const email = document.querySelector("input[name='email']").value
-        const senha = document.querySelector("input[name='senha']").value
-
-       
-
+            const nome = document.querySelector("input[name='nome']").value
+            const email = document.querySelector("input[name='email']").value
+            const senha = document.querySelector("input[name='senha']").value
+        
+    
         const obj = {
+
             nome: nome,
             email: email,
             senha: senha
-        }
-
-        const axios = require('axios');
-
+        }       
+        
+       
         axios.post('http://localhost:3001/usuarios', obj)
         .then(function (response) {
             console.log(response);
         })
-        .catch(function (error) {
-            console.log(error)
-        })
+          
     }
   return (
     <>
@@ -40,10 +38,10 @@ function Cadastro() {
             <h2> Cadastrar </h2>
             <form onSubmit={(e) => registrar(e)}>
             <div className='input'>
-                    <input id="email"  name="nome" type="text" placeholder='Nome...'/>
+                    <input  name="nome" type="text" placeholder='Nome...'/>
                 </div>
                 <div className='input'>
-                    <input id="email"  name="email" type="email" placeholder='Email...'/>
+                    <input  name="email" type="email" placeholder='Email...'/>
                 </div>
                 <div className='input'>
                     <input name="senha" type="password" placeholder='Senha...'/>

@@ -40,7 +40,7 @@ export default function ModalDetalhes({id}) {
     fetchData();
     
   }, [id]); 
-  console.log(video)
+  
 
 
   return ReactDOM.createPortal(

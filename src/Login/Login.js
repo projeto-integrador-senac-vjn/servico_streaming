@@ -1,9 +1,29 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 function Login() {
     require("./Login.css")
+
+    const logar = (e) => {
+        e.preventDefault();  
+            const gmail = document.querySelector("input[name='gmail']").value
+            const password = document.querySelector("input[name='password']").value
+        
+    
+        const obj = {
+            mail: gmail,
+            password: password
+        }       
+        
+       
+        axios.post('http://localhost:3001/login', obj)
+        .then(function (response) {
+            console.log(response);
+        })
+          
+    }
   return (
           
       <>
@@ -14,15 +34,17 @@ function Login() {
             <img src='https://pobreflix.me/uploads/system_logo/logo_61e7fc761242d.png' alt='Pobreflix/logo'/>
         <div className='login'>
             <h2> Entrar </h2>
-            <form>
+            <form onSubmit={(e) => logar(e)}>
+                
                 <div className='input'>
-                    <input type="email" placeholder='Email'/>
+                    <input name="gmail" type="email" placeholder='Email'/>
                 </div>
                 <div className='input'>
-                    <input type="password" placeholder='Senha'/>
+                    <input name="password" type="password" placeholder='Senha'/>
                 </div> 
+                <button>Entrar</button>
             </form>
-            <Link to="/home"><button>Entrar</button></Link>
+            
             <p className='sign_up'> Novo por aqui? <Link to="/cadastro">Assine agora </Link> </p>
         </div>
         </div>
