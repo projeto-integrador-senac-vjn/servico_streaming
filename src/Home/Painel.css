@@ -1,0 +1,31 @@
+.painel{
+    position: absolute;
+    top: 0;
+    max-height: 600px;
+    width: 100%;
+
+}
+
+.shows{
+    z-index: 100;
+    margin-top: 250px;
+    margin-left: 44%;
+    position: absolute;
+}
+
+.curtidos{
+    position: relative;
+    margin-top: 600px;
+    margin-left: 10px;
+}
+
+.favoritos{
+    position: relative;
+    margin-top: 60px;
+    margin-left: 15px;
+}
+
+.rowImg{
+    width: 250px;
+    height: 150px;
+}

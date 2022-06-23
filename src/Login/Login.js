@@ -1,10 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 
 function Login() {
     require("./Login.css")
+    const navigate = useNavigate();
 
     const logar = (e) => {
         e.preventDefault();  
@@ -13,14 +14,20 @@ function Login() {
         
     
         const obj = {
-            mail: gmail,
+            gmail: gmail,
             password: password
         }       
         
        
         axios.post('http://localhost:3001/login', obj)
         .then(function (response) {
-            console.log(response);
+            console.log(response)
+             if(response.data != 0){
+                alert("Logado com sucesso")
+                navigate("/home")
+            }else{
+                alert("Email ou senha incorretos")
+            }
         })
           
     }
