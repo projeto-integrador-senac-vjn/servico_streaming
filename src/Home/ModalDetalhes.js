@@ -34,12 +34,42 @@ export default function ModalDetalhes({id}) {
 
   
 
+  
+
   React.useEffect(() => {
     fetchData();
     
   }, [id]); 
+
+  
+
+ 
  
 
+  const avaliar = (curtida) => {
+    
+     const obj = {
+       idAvaliar: id
+     }
+
+
+     if(curtida == true){
+      axios.post(`http://localhost:3001/curtidos`, obj)
+      .then(function (response) {
+        console.log(response)
+      }).catch(function (response) {
+        alert("Erro")
+      })
+     }else{
+      axios.post(`http://localhost:3001/favoritos`, obj)
+      .then(function (response) {
+        console.log(response)
+      }).catch(function (response) {
+        alert("Erro")
+      })
+     }
+     
+    }
 
   return ReactDOM.createPortal(
     <>
@@ -55,8 +85,8 @@ export default function ModalDetalhes({id}) {
               <div className='flex'>   
                     <p className='relevance'>{movie.vote_average} de pontos</p> 
                     <p className='release'>{movie.release_date}</p>
-                    <StarBorderIcon/>
-                    <FavoriteBorderIcon/>                                
+                    <StarBorderIcon onClick={() => avaliar(false)} />
+                    <FavoriteBorderIcon  onClick={() => avaliar(true)} />                                
               </div>
                     <p className='overview'>{movie.overview}</p>
 

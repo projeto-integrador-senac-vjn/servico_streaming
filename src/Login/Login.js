@@ -21,10 +21,15 @@ function Login() {
        
         axios.post('http://localhost:3001/login', obj)
         .then(function (response) {
-            console.log(response)
+            
              if(response.data != 0){
                 alert("Logado com sucesso")
                 navigate("/home")
+                const user = (response.data)
+                localStorage.setItem("idUser", user.idusuario)
+                localStorage.getItem("idUser")
+                
+
             }else{
                 alert("Email ou senha incorretos")
             }

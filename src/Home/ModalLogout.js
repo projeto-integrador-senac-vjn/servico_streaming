@@ -4,8 +4,16 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import './NavBar.css'
 import CloseIcon from '@mui/icons-material/Close';
+import {useNavigate} from 'react'
 
 
+
+
+const sair = () => {
+   localStorage.removeItem("idUser")
+   useNavigate("/inicio")
+
+}
 
 const style = {
   position: 'absolute',
@@ -41,7 +49,7 @@ export default function BasicModal() {
         <h3 >Tem Certeza?</h3>
         <br/>
         <br/>
-        <button>Sair</button>
+        <button onClick={sair}>Sair</button>
       
             
         
