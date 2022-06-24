@@ -38,9 +38,7 @@ export default function ModalDetalhes({id}) {
     fetchData();
     
   }, [id]); 
-
-  console.log(id)
-  
+ 
 
 
   return ReactDOM.createPortal(
