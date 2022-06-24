@@ -17,7 +17,6 @@ function Cadastro() {
                     alert("Cadastrado com sucesso")
                     navigate("/login")
                     
-                    
                 }).catch(function (response) {
                     alert("Verifique os campos tente novamente")
                 })

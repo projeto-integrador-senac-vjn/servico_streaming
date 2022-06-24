@@ -120,14 +120,14 @@
 
 @media screen and (max-width: 1600px){
     .poster{
-        width: 48.2%;
+        width: 59.3%
     }
 
     .modal--content{
         height: 800px;
     }
     .movieTitle{
-        margin-top: 370px;
+        margin-top: 250px;
     }
 }
 

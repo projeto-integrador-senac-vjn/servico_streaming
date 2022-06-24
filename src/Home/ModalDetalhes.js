@@ -9,8 +9,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-
-
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 const modal = document.getElementById('modal')
 
@@ -40,6 +38,8 @@ export default function ModalDetalhes({id}) {
     fetchData();
     
   }, [id]); 
+
+  console.log(id)
   
 
 
@@ -49,7 +49,7 @@ export default function ModalDetalhes({id}) {
        <div className="modal" >
           <div className='modal--content'>
               <div>
-                  <CloseIcon className='iconX' onClick={handleClose}/> 
+                  <CloseIcon className='iconX' onClick={handleClose} /> 
               </div>
                 
               <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} /> 
