@@ -27,6 +27,7 @@ export default ({title, items, onItemSelected}) => {
         setScrollX(x)
 
     }
+   
 
     return (
         
@@ -47,9 +48,9 @@ export default ({title, items, onItemSelected}) => {
                     >
                         {items.results.length > 0 && items.results.map((item, key)=>(
                             
-                            <div key={key} className="movieRow--item" onClick={() => { onItemSelected(item.id) }}>
+                            <div key={key} className="movieRow--item" onClick={() => { onItemSelected(item.id, item.backdrop_path, item.overview, item.original_title, item.release_date, item.vote_verage) }} >
                                 <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
-
+                                
                                                 
                             </div>
                             

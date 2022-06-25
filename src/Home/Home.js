@@ -14,15 +14,25 @@ export default () => {
   const [originais, setOriginais] = useState([]);
 
   const [itemId, setItemId] = useState();
+  const [itemImg, setItemImg] = useState()
+  const [itemDesc, setItemDesc] = useState()
+  const [itemNome, setItemNome] = useState()
+  const [itemAno, setItemAno] = useState()
+  const [itemNota, setItemNota] = useState()
 
   
 
-  const itemSelected = (itemId) => {
+  const itemSelected = (itemId, itemImg, itemDesc, itemNome, itemAno, itemNota) => {
     setItemId(itemId);
+    setItemImg(itemImg)
+    setItemDesc(itemDesc)
+    setItemNome(itemNome)
+    setItemAno(itemAno)
+    setItemNota(itemNota)
 
-   
 
   };
+
 
   useEffect(()=> {
     const loadAll = async () => {
@@ -69,7 +79,7 @@ export default () => {
       </div>
       }
 
-      <ModalDetalhes id={itemId} />
+      <ModalDetalhes id={itemId}  img={itemImg} desc={itemDesc} nome={itemNome} ano={itemAno} nota={itemNota}/>
 
 
     </div>

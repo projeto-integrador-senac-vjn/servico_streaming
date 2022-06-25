@@ -13,10 +13,12 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 const modal = document.getElementById('modal')
 
 
-export default function ModalDetalhes({id}) { 
+export default function ModalDetalhes({id, img, desc, nome, ano, nota}) { 
   const [movie, setMovie] = React.useState();
   const [video, setVideo] = React.useState();
   const handleClose = () => setMovie(false);
+
+  
   
 
   const fetchData = async() => {
@@ -49,7 +51,13 @@ export default function ModalDetalhes({id}) {
   const avaliar = (curtida) => {
     
      const obj = {
-       idAvaliar: id
+       idAvaliar: id,
+       idImg: img,
+       idDesc: desc,
+       idNome: nome,
+       idAno: ano,
+       idNota: nota
+
      }
 
 
