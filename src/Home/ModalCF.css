@@ -1,4 +1,4 @@
-.modal--content{
+.modal--content--CF{
     background-color: #141414;
     border-radius: 10px 10px 0px 0px;
     max-width: 801px;
@@ -6,27 +6,26 @@
     margin: 80px auto 0 auto;
 }
 
-.modal{
+.modalCF{
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
+    right: 0%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 100;
+    background-size: 1000%;
+    z-index: 1000;
 }
 
-.poster{
-    width: 83%;
-    height: 45vh;
-    width: 59.4%;
+.posterCF{
+    width: 86%;
     height: 40vh;
     border-radius: 10px 10px 0px 0px;
     top: 79px;
     position: absolute;
 }
 
-.iconX{
+.iconFecha{
     margin-left: 770px;
     cursor: pointer;
     position: relative;
@@ -34,7 +33,7 @@
     margin-top: 5px;
 }
 
-.movieTitle{
+.movieTitleCF{
     font-size: xx-large;
     margin-top: 370px;
     margin-top: 330px;
@@ -44,90 +43,80 @@
 }
 
 
-.flex{
+.flexCF{
     display: flex;
     margin-bottom: 10px;
     position: relative;
     
 }
 
-.relevance{
+.relevanceCF{
     color: #46d369;
 }
 
-.flex p, svg{
+.flexCF p, svg{
     margin-left: 15px;
 }
 
-.release{
+.releaseCF{
     margin-left: 45px;
 }
 
-.flex svg{
+.flexCF svg{
     cursor: pointer;
     margin-top: -3px;
     margin-left: 35px;
 }
 
-.overview{
+.overviewCF{
     margin: 15px;
 }
 
-.trailer{
-    text-decoration: none;
-    background-color: #ffff;
-    color: #141414;
-    padding: 2px 15px;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-top: 0px;
-    text-align: center;
-    font-size: 20px;
-}
+
 
 
 
 @media screen and (min-width: 1000px){
-    .poster{
+    .posterCF{
         width: 42.1%;
     }
 
-    .modal--content{
+    .modal--content--CF{
         height: 800px;
     }
-    .movieTitle{
+    .movieTitleCF{
         margin-top: 370px;
     }
 }
 
 
 @media screen and (max-width: 1000px){
-    .poster{
+    .posterCF{
         width: 82.5%;
     }
 
-    .modal--content{
+    .modal--content--CF{
         height: 800px;
     }
-    .movieTitle{
+    .movieTitleCF{
         margin-top: 370px;
     }
 }
 
 @media screen and (max-width: 1600px){
-    .poster{
+    .posterCF{
         width: 59.3%
     }
 
-    .modal--content{
+    .modal--content--CF{
         height: 800px;
     }
-    .movieTitle{
+    .movieTitleCF{
         margin-top: 250px;
     }
 }
 
-.remove--button{
+.remove--buttonCF{
     top: 86%;
     left: 21.5%;
     position: absolute;

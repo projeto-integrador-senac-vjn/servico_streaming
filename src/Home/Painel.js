@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import axios from 'axios'
+import "../App.css"
+import ModalFavoritos from "./ModalFavoritos"
+import ModalCurtidos from "./ModalCurtidos"
 
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 
@@ -9,17 +12,24 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 function Painel() {
   require("./Painel.css")
   const [curtido, setCurtido] = useState([])
-  const [favorite, setFavorite] = useState([])
-  const [like, setLike] = useState([])
+  const [idFavorite, setIdFavorite] = useState([])
   const [favorito, setFavorito] = useState([]) 
-  const [filmes, setFilmes] = useState([])
+  const [idLike, setIdLike] = useState()
+
+  const onFavoriteSelected = (idFavorite) => {
+    setIdFavorite(idFavorite)
+  }
+
+  const onLikeSelected = (idLike) => {
+    setIdLike(idLike)
+  }
 
   
   useEffect( () => {
-    axios.get('http://localhost:3001/curtidos')
+    
+    axios.get('http://localhost:3002/curtidos')
     .then( function (response) {
-        /*setCurtido(response.data.id_filme);*/
-        setCurtido([424])
+        setCurtido(response.data)
     })
     .catch(function (error) {         
         console.log(error);
@@ -27,67 +37,15 @@ function Painel() {
   }, [])
 
   useEffect( () => {
-    axios.get('http://localhost:3001/favoritos')
+    
+    axios.get('http://localhost:3002/favoritos')
     .then( function (response) {
-        setFavorito(response.data);
+       setFavorito(response.data);
     })
     .catch(function (error) {         
         console.log(error);
     })
-  }, [])
-
-  const buscaCurtidos = () => {
-    
-    const filmes = []
-    
-
-    const loop = (index, length) => {
-
-        if(index > length){
-          console.log(filmes)
-          setFilmes(filmes)
-          return;
-        }
-
-        console.log(curtido[index])
-
-        axios.get(`https://api.themoviedb.org/3/movie/${curtido[index]}?api_key=${API_KEY}&language=pt-BR`)
-        .then( response => {
-          filmes.push(response)
-          loop(index + 1, curtido.length)
-        })
-        .catch( error => console.log(error) )
-
-    }
-
-    loop(0, curtido.length)
-
-  }
-
-  if(curtido != 0){
-    buscaCurtidos()
-  }
-
- 
-
- /* useEffect( () => {
-    axios.get(`https://api.themoviedb.org/3/movie/${curtido}?api_key=${API_KEY}&language=pt-BR`)
-    .then( function (response) {
-        setFavorite(response.data);
-    })
-    .catch(function (error) {         
-        console.log(error);
-    })
-  }, [])*/
-
-  console.log(favorito)
-
-  
-
-   
-    
-  
-      
+  }, []);
 
   return (
     <div>
@@ -96,27 +54,46 @@ function Painel() {
 
         <h1 className='shows'>Meus Filmes</h1>
         <br/>
-        <h2  className='curtidos'>Curtidos</h2>
+        <h2  className='favoritos'>Favoritos</h2>
 
         {
-            curtido == 0 ? <p>Carregando</p>
+            favorito == 0 ? 
+            <h2 className='adicione'>Nenhum filme adicionado</h2>
             :
             <div>
-                {curtido.map(u => {
+                {favorito.map((u, key) => {
                     return(
-                        <>
-                            <strong>Email: {u.id_filme}</strong>
-                            <hr/>
-                        </>
+                      <div className="container--favoritos" onClick={() => {onFavoriteSelected(u.id_filme)}}>
+                            <img key={key} className="imgFavoritos"  src={`https://image.tmdb.org/t/p/original${u.img}`}/>
+                        </div>
+                    )
+                })}
+            </div>
+        }
+
+        <h1 className="curtidos">Curtidos</h1>
+        
+        {
+            curtido == 0 ? 
+            <h2 className='adicione'>Nenhum filme adicionado</h2>
+            :
+            <div>
+                {curtido.map((u, key) => {
+                    return(
+                        <div className='container--favoritos' onClick={() => { onLikeSelected(u.id_filme) }}>
+                            <img key={key} className="imgFavoritos" src={`https://image.tmdb.org/t/p/original${u.img}`}/>
+                        </div>
                     )
                 })}
             </div>
         }
         
-        
 
         
         <br/>
+
+        <ModalFavoritos id={idFavorite}/>
+        <ModalCurtidos id={idLike}/>
         
     </div>
   )

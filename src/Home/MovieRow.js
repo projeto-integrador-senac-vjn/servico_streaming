@@ -48,7 +48,7 @@ export default ({title, items, onItemSelected}) => {
                     >
                         {items.results.length > 0 && items.results.map((item, key)=>(
                             
-                            <div key={key} className="movieRow--item" onClick={() => { onItemSelected(item.id, item.backdrop_path, item.overview, item.original_title, item.release_date, item.vote_verage) }} >
+                            <div key={key} className="movieRow--item" onClick={() => { onItemSelected(item.id, item.backdrop_path) }} >
                                 <img src={`https://image.tmdb.org/t/p/w300${item.poster_path}`} alt={item.original_title} />
                                 
                                                 
@@ -60,15 +60,8 @@ export default ({title, items, onItemSelected}) => {
                 </div> 
             </div>
            
-                            
-            
             
         </div>
-            
-            
-
-            
-        
 
     );
 }

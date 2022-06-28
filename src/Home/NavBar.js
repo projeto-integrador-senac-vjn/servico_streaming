@@ -38,7 +38,7 @@ function NavBar() {
         </header>
         {menu && (
           <div className="menulist">
-              <Link className="teste" to="/painel"><p>Seus Favoritos</p> </Link>
+              <Link className="teste" to="/painel"><p>Seus Filmes</p> </Link>
               
               <ModalLogout/> 
           </div>

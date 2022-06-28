@@ -90,11 +90,12 @@ header.black{
     color: #fff;
     background-color: #141414;
     padding: 5px;
+    z-index: 20;
 }
 
 @media screen and (min-width: 1000px){
     .menulist{
-        margin-left: 92%;
+        margin-left: 87%;
     }
 }
 

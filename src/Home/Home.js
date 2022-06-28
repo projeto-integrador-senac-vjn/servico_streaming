@@ -15,23 +15,17 @@ export default () => {
 
   const [itemId, setItemId] = useState();
   const [itemImg, setItemImg] = useState()
-  const [itemDesc, setItemDesc] = useState()
-  const [itemNome, setItemNome] = useState()
-  const [itemAno, setItemAno] = useState()
-  const [itemNota, setItemNota] = useState()
-
+  
+  
   
 
-  const itemSelected = (itemId, itemImg, itemDesc, itemNome, itemAno, itemNota) => {
+  const itemSelected = (itemId, itemImg) => {
     setItemId(itemId);
     setItemImg(itemImg)
-    setItemDesc(itemDesc)
-    setItemNome(itemNome)
-    setItemAno(itemAno)
-    setItemNota(itemNota)
-
-
+  
   };
+
+  
 
 
   useEffect(()=> {
@@ -79,7 +73,7 @@ export default () => {
       </div>
       }
 
-      <ModalDetalhes id={itemId}  img={itemImg} desc={itemDesc} nome={itemNome} ano={itemAno} nota={itemNota}/>
+      <ModalDetalhes id={itemId}  img={itemImg} />
 
 
     </div>

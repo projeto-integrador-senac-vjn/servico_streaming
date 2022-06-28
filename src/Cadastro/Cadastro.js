@@ -12,7 +12,7 @@ function Cadastro() {
             if(obj.nome == '' || obj.email == '' || obj.senha == ''){
                 alert("Algum campo está incorreto")
             }else{
-                axios.post('http://localhost:3001/usuarios', obj)
+                axios.post('http://localhost:3002/usuarios', obj)
                 .then(function (response) {
                     alert("Cadastrado com sucesso")
                     navigate("/login")

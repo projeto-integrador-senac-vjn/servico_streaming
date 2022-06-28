@@ -20,8 +20,8 @@ const Perguntas = () => {
                         <br/>
                         {isActive && (
                             <h2 className='ativado1'>                   
-                                    A Pobreflix é um serviço de transmissão online que oferece uma ampla variedade de séries, filmes e documentários premiados em milhares de aparelhos conectados à internet.
-                                    Você pode assistir a quantos filmes e séries quiser, quando e onde quiser, sem comerciais – tudo por um preço mensal bem acessível. Aqui você sempre encontra novidades. A cada semana, adicionamos novas séries e filmes.
+                                    A Pobreflix é um serviço de transmissão online que oferece uma ampla variedade de  filmes e documentários premiados em milhares de aparelhos conectados à internet.
+                                    
                             </h2>
                             
                         )}
@@ -29,14 +29,13 @@ const Perguntas = () => {
                           
         <div className='dropdown2' onClick={() => 
                 setIsActive2(!isActive2)}>
-                  <h1 > Onde posso assistir? </h1>    
+                  <h1 > Onde posso fazer? </h1>    
             
         </div>
         <br/>
                 {isActive2 && (                 
                         <h2 className='ativado2'>                   
-                        Assista onde quiser, quando quiser. Faça login com sua conta Pobreflix em pobreflix.com para começar a assistir no computador ou em qualquer aparelho conectado à Internet compatível com o aplicativo Netflix, como Smart TVs, smartphones, tablets, aparelhos de streaming e videogames. <br/><br/>
-                        Você também pode baixar a sua série favorita com o aplicativo Pobreflix para iOS, Android ou Windows 10. Use downloads para levar a Pobreflix para onde quiser sem precisar de conexão com a Internet. Leve a Pobreflix com você para qualquer lugar.
+                        Veja detalhes sobre os filmes mais novos e famosos do momento
                         </h2>
                     
                     
@@ -54,7 +53,7 @@ const Perguntas = () => {
             <br/>
                 {isActive3 && (             
                         <h2 className='ativado3'>                   
-                        A Pobreflix tem um grande catálogo de filmes, documentários, séries, originais Pobreflix premiados e muito mais. Assista o quanto quiser, quando quiser.
+                        A Pobreflix tem um grande catálogo de filmes, documentários,  originais Pobreflix premiados e muito mais. Assista o quanto quiser, quando quiser.
                         </h2>
 
                     

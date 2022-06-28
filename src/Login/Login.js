@@ -19,15 +19,14 @@ function Login() {
         }       
         
        
-        axios.post('http://localhost:3001/login', obj)
+        axios.post('http://localhost:3002/login', obj)
         .then(function (response) {
             
              if(response.data != 0){
-                alert("Logado com sucesso")
+                alert("Logado com sucesso")       
+                const user = (response.data[0].idusuario)
                 navigate("/home")
-                const user = (response.data)
-                localStorage.setItem("idUser", user.idusuario)
-                localStorage.getItem("idUser")
+                localStorage.setItem("idUser", user)
                 
 
             }else{

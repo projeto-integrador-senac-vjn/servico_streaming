@@ -10,7 +10,6 @@ const Inicio = () => {
     return(
         <div id='inicio'>
             <Header/>
-            <Row/>
             <Perguntas/>
             <Rodape/> 
         </div>

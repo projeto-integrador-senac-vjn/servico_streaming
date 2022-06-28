@@ -9,11 +9,7 @@ import {useNavigate} from 'react'
 
 
 
-const sair = () => {
-   localStorage.removeItem("idUser")
-   useNavigate("/inicio")
 
-}
 
 const style = {
   position: 'absolute',
@@ -33,6 +29,12 @@ export default function BasicModal() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const Sair = () => {
+    localStorage.removeItem("idUser")
+    useNavigate("/")
+ 
+ }
+
   return (
     <div>
       <hr/>
@@ -49,7 +51,7 @@ export default function BasicModal() {
         <h3 >Tem Certeza?</h3>
         <br/>
         <br/>
-        <button onClick={sair}>Sair</button>
+        <button onClick={Sair}>Sair</button>
       
             
         

@@ -7,15 +7,16 @@ import StarBorderIcon from '@mui/icons-material/StarBorder';
 import StarIcon from '@mui/icons-material/Star';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import YouTubeIcon from '@mui/icons-material/YouTube';
+
 
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 const modal = document.getElementById('modal')
 
 
-export default function ModalDetalhes({id, img, desc, nome, ano, nota}) { 
+export default function ModalDetalhes({id, img}) { 
   const [movie, setMovie] = React.useState();
   const [video, setVideo] = React.useState();
+  const [curtido, setCurtido] = React.useState();
   const handleClose = () => setMovie(false);
 
   
@@ -34,50 +35,62 @@ export default function ModalDetalhes({id, img, desc, nome, ano, nota}) {
     }
   }
 
+  const fetchVideo = async() => {
+    if (id) {
+      axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=pt-BR`)
+      .then((res) => {
+        setVideo(res.data.results[0]?.key)
+        
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
+    }
+  }
+
   
 
   
 
   React.useEffect(() => {
     fetchData();
+    fetchVideo();
     
   }, [id]); 
 
-  
-
- 
- 
 
   const avaliar = (curtida) => {
     
      const obj = {
        idAvaliar: id,
        idImg: img,
-       idDesc: desc,
-       idNome: nome,
-       idAno: ano,
-       idNota: nota
-
+       idUser: localStorage.getItem('idUser')
+       
      }
 
 
      if(curtida == true){
-      axios.post(`http://localhost:3001/curtidos`, obj)
-      .then(function (response) {
-        console.log(response)
-      }).catch(function (response) {
-        alert("Erro")
+      axios.post(`http://localhost:3002/curtidos`, obj)
+      .then(function (results) {
+        console.log(results)
+      }).catch(function (error) {
+        console.log(error)
       })
      }else{
-      axios.post(`http://localhost:3001/favoritos`, obj)
+      axios.post(`http://localhost:3002/favoritos`, obj)
       .then(function (response) {
-        console.log(response)
+        alert("Filme cadastrado aos favoritos")
+        
       }).catch(function (response) {
-        alert("Erro")
+        alert("Filme já salvo nos favoritos")
       })
      }
      
     }
+
+    
+    
+    
 
   return ReactDOM.createPortal(
     <>
@@ -97,6 +110,7 @@ export default function ModalDetalhes({id, img, desc, nome, ano, nota}) {
                     <FavoriteBorderIcon  onClick={() => avaliar(true)} />                                
               </div>
                     <p className='overview'>{movie.overview}</p>
+                    
 
             </div>
        </div>
