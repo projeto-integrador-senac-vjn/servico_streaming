@@ -10,7 +10,17 @@ function ModalFavoritos({id}) {
   const [modal, setModal] = useState(false)
   const handleClose = () => setMovie(false) 
 
-  const Comentários = () => {}
+  const Remove = () => {
+    const obj = {
+      idRemove: id
+    }
+    axios.delete(`http://localhost:3002/deetaCurtidos`, obj)
+    .then(function (results) {
+      alert("Removido")
+    }).catch(function (error) {
+      alert("filme já removido")
+    })
+  }
   
 
   const fetchData = async() => {
@@ -50,7 +60,7 @@ function ModalFavoritos({id}) {
               </div>
                     <p className='overviewCF'>{movie.overview}</p>
               </div>
-              <button className='remove--buttonCF'>Comentários</button>
+              <button className='remove--buttonCF'  onClick={() => Remove}>Remover</button>
        </div>
       
     )}

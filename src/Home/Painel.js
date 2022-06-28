@@ -26,8 +26,10 @@ function Painel() {
 
   
   useEffect( () => {
-    
-    axios.get('http://localhost:3002/curtidos')
+    const obj = {
+      idUser: localStorage.getItem("idUser")
+    }
+    axios.get('http://localhost:3002/curtidos', obj)
     .then( function (response) {
         setCurtido(response.data)
     })
