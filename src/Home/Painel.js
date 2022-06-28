@@ -4,6 +4,7 @@ import axios from 'axios'
 import "../App.css"
 import ModalFavoritos from "./ModalFavoritos"
 import ModalCurtidos from "./ModalCurtidos"
+import {useNavigate} from 'react-router-dom'
 
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 
@@ -11,6 +12,7 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 
 function Painel() {
   require("./Painel.css")
+  const navigate = useNavigate()
   const [curtido, setCurtido] = useState([])
   const [idFavorite, setIdFavorite] = useState([])
   const [favorito, setFavorito] = useState([]) 
@@ -24,12 +26,20 @@ function Painel() {
     setIdLike(idLike)
   }
 
+  useEffect( () => {
+    
+    if(!localStorage.getItem("idUser")){
+      navigate("/login")
+
+    }
+
+  }, [])
   
   useEffect( () => {
     const obj = {
       idUser: localStorage.getItem("idUser")
     }
-    axios.get('http://localhost:3002/curtidos', obj)
+    axios.get('http://localhost:3002/curtidos/'+obj.idUser)
     .then( function (response) {
         setCurtido(response.data)
     })
@@ -39,8 +49,10 @@ function Painel() {
   }, [])
 
   useEffect( () => {
-    
-    axios.get('http://localhost:3002/favoritos')
+    const obj = {
+      idUser: localStorage.getItem("idUser")
+    }
+    axios.get('http://localhost:3002/favoritos/'+obj.idUser)
     .then( function (response) {
        setFavorito(response.data);
     })

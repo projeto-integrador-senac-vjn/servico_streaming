@@ -24,7 +24,7 @@ function Login() {
             
              if(response.data != 0){
                 alert("Logado com sucesso")       
-                const user = (response.data[0].idusuario)
+                const user = (response.data[0].id_usuario)
                 navigate("/home")
                 localStorage.setItem("idUser", user)
                 

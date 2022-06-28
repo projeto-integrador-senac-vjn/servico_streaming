@@ -10,11 +10,13 @@ function ModalFavoritos({id}) {
   const [modal, setModal] = useState(false)
   const handleClose = () => setMovie(false) 
 
-  const Remove = () => {
+ 
+
+  const Remover = () => {
     const obj = {
-      idRemove: id
+      id: id
     }
-    axios.delete(`http://localhost:3002/deetaCurtidos`, obj)
+    axios.delete(`http://localhost:3002/deletaFavoritos`, obj)
     .then(function (results) {
       alert("Removido")
     }).catch(function (error) {
@@ -48,19 +50,24 @@ function ModalFavoritos({id}) {
       {(movie) && (  
        <div className="modalCF" >
           <div className='modal--content--CF'>
-              <div>
+                <div>
                   <CloseIcon className='iconFecha'  onClick={handleClose}/> 
-              </div>
+                </div>
                 
-              <img className='posterCF' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} /> 
-              <p className='movieTitleCF'>{movie.title}</p>
-              <div className='flexCF'>   
-                    <p className='relevanceCF'>{movie.vote_average} de pontos</p> 
-                    <p className='releaseCF'>{movie.release_date}</p>                              
-              </div>
-                    <p className='overviewCF'>{movie.overview}</p>
-              </div>
-              <button className='remove--buttonCF'  onClick={() => Remove}>Remover</button>
+                    <img className='posterCF' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} /> 
+                    <p className='movieTitleCF'>{movie.title}</p>
+                <div className='flexCF'>   
+                        <p className='relevanceCF'>{movie.vote_average} de pontos</p> 
+                        <p className='releaseCF'>{movie.release_date}</p>                              
+                  </div>
+                        <p className='overviewCF'>{movie.overview}</p>
+                  
+                  <div className='coments--remove'>
+                      <button className='remove--buttonCF'>Remover dos favoritos</button>
+                  </div>
+                  
+                      
+          </div>
        </div>
       
     )}

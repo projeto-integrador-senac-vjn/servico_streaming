@@ -10,8 +10,22 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 function ModalCurtidos({id}) {
   const [movie ,setMovie] = useState();
   const handleClose = () =>  setMovie(false)
-  
-  
+
+
+  const Remover = () => {
+    const obj = {
+      id: id
+    }
+    axios.delete(`http://localhost:3002/deletaCurtidos`, obj)
+    .then((res) => {
+      console.log(res)
+      
+    })
+      .catch((error) => {
+    })
+  }
+ 
+
 
   const fetchData = async() => {
     if (id) {
@@ -25,9 +39,6 @@ function ModalCurtidos({id}) {
     }
   }
 
-  
-
-  
 
   React.useEffect(() => {
     fetchData();
@@ -50,8 +61,8 @@ function ModalCurtidos({id}) {
                     <p className='relevance'>{movie.vote_average} de pontos</p> 
                     <p className='release'>{movie.release_date}</p>                              
               </div>
-                    <p className='overview'>{movie.overview}</p>
-                    <button className='remove--button' >Remover dos Curtidos</button>
+                    <p className='overview'>{movie.overview}</p>                
+                      <button className='remove--buttonCF' onClick={() => Remover}>Remover dos Curtidos</button>                   
             </div>
        </div>
     )}

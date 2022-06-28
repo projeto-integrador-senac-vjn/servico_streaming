@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Modal from '@mui/material/Modal';
 import './NavBar.css'
 import CloseIcon from '@mui/icons-material/Close';
-import {useNavigate} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 
 
@@ -28,10 +28,12 @@ export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const navigate = useNavigate()
 
   const Sair = () => {
     localStorage.removeItem("idUser")
-    useNavigate("/")
+    
+    navigate("/")
  
  }
 

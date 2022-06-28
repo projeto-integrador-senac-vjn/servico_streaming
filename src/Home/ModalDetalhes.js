@@ -35,18 +35,7 @@ export default function ModalDetalhes({id, img}) {
     }
   }
 
-  const fetchVideo = async() => {
-    if (id) {
-      axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=pt-BR`)
-      .then((res) => {
-        setVideo(res.data.results[0]?.key)
-        
-      })
-      .catch((error) => {
-        alert(error.message)
-      })
-    }
-  }
+ 
 
   
 
@@ -54,7 +43,7 @@ export default function ModalDetalhes({id, img}) {
 
   React.useEffect(() => {
     fetchData();
-    fetchVideo();
+   
     
   }, [id]); 
 
@@ -72,17 +61,17 @@ export default function ModalDetalhes({id, img}) {
      if(curtida == true){
       axios.post(`http://localhost:3002/curtidos`, obj)
       .then(function (results) {
-        console.log(results)
+        alert("Cadastrado com sucesso aos curtidos")
       }).catch(function (error) {
-        console.log(error)
+        alert("Filme já cadastrado aos curtidos")
       })
      }else{
       axios.post(`http://localhost:3002/favoritos`, obj)
       .then(function (response) {
-        alert("Filme cadastrado aos favoritos")
+        alert("Cadastrado com sucesso")
         
       }).catch(function (response) {
-        alert("Filme já salvo nos favoritos")
+        alert("Filme já cadastrado aos favoritos")
       })
      }
      

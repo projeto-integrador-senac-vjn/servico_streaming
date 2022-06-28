@@ -13,8 +13,7 @@
     bottom: 0;
     right: 0%;
     background-color: rgba(0, 0, 0, 0.5);
-    background-size: 1000%;
-    z-index: 1000;
+    
 }
 
 .posterCF{
@@ -23,6 +22,11 @@
     border-radius: 10px 10px 0px 0px;
     top: 79px;
     position: absolute;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
+    
 }
 
 .iconFecha{
@@ -76,6 +80,7 @@
 
 
 
+
 @media screen and (min-width: 1000px){
     .posterCF{
         width: 42.1%;
@@ -117,11 +122,13 @@
 }
 
 .remove--buttonCF{
-    top: 86%;
-    left: 21.5%;
-    position: absolute;
+    margin-left: 15px;
     color: red;
     background-color: #141414;
     padding: 10px 15px 10px 15px;
+    cursor: pointer;
 }
+
+
+
 
