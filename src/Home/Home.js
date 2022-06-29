@@ -5,10 +5,11 @@ import MovieRow from "./MovieRow";
 import FeaturedMovie from "./FeaturedMovie";
 import NavBar from "./NavBar";
 import ModalDetalhes from "./ModalDetalhes";
+import {useNavigate} from 'react-router-dom'
 
 
 export default () => {
-
+  const navigate = useNavigate();
   const [movieList, setMovieList] = useState([]);
   const [featuredData, setFeaturedData] = useState(null);
   const [originais, setOriginais] = useState([]);
@@ -16,7 +17,14 @@ export default () => {
   const [itemId, setItemId] = useState();
   const [itemImg, setItemImg] = useState()
   
-  
+  useEffect( () => {
+    
+    if(!localStorage.getItem("idUser")){
+      navigate("/login")
+
+    }
+
+  }, [])
   
 
   const itemSelected = (itemId, itemImg) => {

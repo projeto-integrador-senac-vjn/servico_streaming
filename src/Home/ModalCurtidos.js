@@ -16,13 +16,12 @@ function ModalCurtidos({id}) {
     const obj = {
       id: id
     }
-    axios.delete(`http://localhost:3002/deletaCurtidos`, obj)
-    .then((res) => {
-      console.log(res)
-      
-    })
-      .catch((error) => {
-    })
+    axios.delete(`http://localhost:3002/deletaCurtidos/`+obj.id)
+      .then(function (response)  {
+        console.log(response)
+      }).catch(function (error) {
+        console.log(error)
+      })
   }
  
 
@@ -58,7 +57,7 @@ function ModalCurtidos({id}) {
               <img className='poster' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} /> 
               <p className='movieTitle'>{movie.title}</p>
               <div className='flex'>   
-                    <p className='relevance'>{movie.vote_average} de pontos</p> 
+                    <p className='relevance'>{movie.vote_average} pontos</p> 
                     <p className='release'>{movie.release_date}</p>                              
               </div>
                     <p className='overview'>{movie.overview}</p>                

@@ -16,7 +16,7 @@ function ModalFavoritos({id}) {
     const obj = {
       id: id
     }
-    axios.delete(`http://localhost:3002/deletaFavoritos`, obj)
+    axios.delete(`http://localhost:3002/deletaFavoritos/`+obj.id)
     .then(function (results) {
       alert("Removido")
     }).catch(function (error) {
@@ -57,13 +57,13 @@ function ModalFavoritos({id}) {
                     <img className='posterCF' src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} alt={movie.original_title} /> 
                     <p className='movieTitleCF'>{movie.title}</p>
                 <div className='flexCF'>   
-                        <p className='relevanceCF'>{movie.vote_average} de pontos</p> 
+                        <p className='relevanceCF'>{movie.vote_average} pontos</p> 
                         <p className='releaseCF'>{movie.release_date}</p>                              
                   </div>
                         <p className='overviewCF'>{movie.overview}</p>
                   
                   <div className='coments--remove'>
-                      <button className='remove--buttonCF'>Remover dos favoritos</button>
+                      <button className='remove--buttonCF' onClick={() => Remover}>Remover dos favoritos</button>
                   </div>
                   
                       

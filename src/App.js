@@ -6,6 +6,8 @@ import Login from './Login/Login';
 import { Routes, Route} from 'react-router-dom'
 import Home from './Home/Home';
 import Painel from './Home/Painel';
+import {Toaster} from 'react-hot-toast'
+
 
 
 
@@ -27,6 +29,8 @@ function App() {
          
 
       </Routes>
+      <Toaster/>
+      
       
     </div>
   );

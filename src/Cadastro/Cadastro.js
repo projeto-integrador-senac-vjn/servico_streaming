@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import {toast} from 'react-hot-toast'
 
 function Cadastro() {
     require("../Login/Login.css")
@@ -10,15 +11,15 @@ function Cadastro() {
 
     const verificaDados = (obj) => {
             if(obj.nome == '' || obj.email == '' || obj.senha == ''){
-                alert("Algum campo está incorreto")
+                toast.error("Algum campo está incorreto")
             }else{
                 axios.post('http://localhost:3002/usuarios', obj)
                 .then(function (response) {
-                    alert("Cadastrado com sucesso")
+                    toast.success("Cadastrado com sucesso")
                     navigate("/login")
                     
                 }).catch(function (response) {
-                    alert("Verifique os campos tente novamente")
+                    toast.error("Verifique os campos tente novamente")
                 })
             }
     }

@@ -1,9 +1,13 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import {toast} from 'react-hot-toast'
+
+ 
 
 
 function Login() {
+    
     require("./Login.css")
     const navigate = useNavigate();
 
@@ -23,14 +27,14 @@ function Login() {
         .then(function (response) {
             
              if(response.data != 0){
-                alert("Logado com sucesso")       
+                toast.success('Logado com sucesso');     
                 const user = (response.data[0].id_usuario)
                 navigate("/home")
                 localStorage.setItem("idUser", user)
                 
 
             }else{
-                alert("Email ou senha incorretos")
+                toast.error('Email ou senha incorretos')
             }
         })
           
