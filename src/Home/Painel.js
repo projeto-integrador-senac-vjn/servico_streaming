@@ -6,8 +6,6 @@ import ModalFavoritos from "./ModalFavoritos"
 import ModalCurtidos from "./ModalCurtidos"
 import {useNavigate} from 'react-router-dom'
 
-const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
-
 
 
 function Painel() {
@@ -95,7 +93,7 @@ function Painel() {
                 {curtido.map((u, key) => {
                     return(
                         <div className='container--favoritos' onClick={() => { onLikeSelected(u.id_filme) }}>
-                            <img key={key} className="imgFavoritos" src={`https://image.tmdb.org/t/p/original${u.img}`}/>
+                            <img key={key} className="imgFavoritos" src={`https://image.tmdb.org/t/p/original${u.img}`}  alt='favoritos'/>
                         </div>
                     )
                 })}

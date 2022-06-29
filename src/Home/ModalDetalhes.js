@@ -16,8 +16,6 @@ const modal = document.getElementById('modal')
 
 export default function ModalDetalhes({id, img}) { 
   const [movie, setMovie] = React.useState();
-  const [video, setVideo] = React.useState();
-  const [curtido, setCurtido] = React.useState();
   const handleClose = () => setMovie(false);
 
   

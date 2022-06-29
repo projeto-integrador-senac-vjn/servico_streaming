@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import './MovieRow.css'
 import {FaAngleLeft, FaAngleRight} from 'react-icons/fa'
-import ModalDetalhes from "./ModalDetalhes";
 import "../App.css"
 
 export default ({title, items, onItemSelected}) => {

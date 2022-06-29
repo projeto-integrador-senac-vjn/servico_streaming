@@ -1,26 +1,28 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
+import toast from 'react-hot-toast';
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 
 
 function ModalFavoritos({id}) {
   require("./ModalCF.css")
   const [movie ,setMovie] = useState();
-  const [modal, setModal] = useState(false)
   const handleClose = () => setMovie(false) 
 
  
 
   const Remover = () => {
     const obj = {
-      id: id
+      idFilme: id,
+      idUser: localStorage.getItem("idUser")
     }
-    axios.delete(`http://localhost:3002/deletaFavoritos/`+obj.id)
-    .then(function (results) {
-      alert("Removido")
-    }).catch(function (error) {
-      alert("filme já removido")
+    axios.delete(`http://localhost:3002/deletaFavoritos/${obj.idFilme}/${obj.idUser}`)
+        .then(function (results) {
+            toast.success("Recarregue a página")
+    })
+        .catch(function (error) {
+          toast.error("Erro")
     })
   }
   
@@ -63,7 +65,7 @@ function ModalFavoritos({id}) {
                         <p className='overviewCF'>{movie.overview}</p>
                   
                   <div className='coments--remove'>
-                      <button className='remove--buttonCF' onClick={() => Remover}>Remover dos favoritos</button>
+                      <button className='remove--buttonCF' onClick={() => Remover()}>Remover dos favoritos</button>
                   </div>
                   
                       

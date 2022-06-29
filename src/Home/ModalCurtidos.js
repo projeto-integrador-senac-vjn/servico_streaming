@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -10,18 +12,24 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 function ModalCurtidos({id}) {
   const [movie ,setMovie] = useState();
   const handleClose = () =>  setMovie(false)
-
+  const navigate = useNavigate()
 
   const Remover = () => {
     const obj = {
-      id: id
+      idFilme: id,
+      idUser: localStorage.getItem("idUser")
+
     }
-    axios.delete(`http://localhost:3002/deletaCurtidos/`+obj.id)
+
+    axios.delete(`http://localhost:3002/deletaCurtidos/${obj.idFilme}/${obj.idUser}`)
       .then(function (response)  {
-        console.log(response)
-      }).catch(function (error) {
-        console.log(error)
+          toast.success("Removido, Recarregue a página")
+          navigate("/")
+          navigate("/painel")
       })
+          .catch(function (error) {
+           
+          })
   }
  
 
@@ -61,7 +69,7 @@ function ModalCurtidos({id}) {
                     <p className='release'>{movie.release_date}</p>                              
               </div>
                     <p className='overview'>{movie.overview}</p>                
-                      <button className='remove--buttonCF' onClick={() => Remover}>Remover dos Curtidos</button>                   
+                      <button className='remove--buttonCF' onClick={() => Remover()}>Remover dos Curtidos</button>                   
             </div>
        </div>
     )}

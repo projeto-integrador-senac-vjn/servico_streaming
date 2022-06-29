@@ -1,5 +1,4 @@
 import React from 'react'
-import Row from './Row'
 import Header from './Header'
 import Perguntas from './Perguntas'
 import Rodape from './Rodape'
