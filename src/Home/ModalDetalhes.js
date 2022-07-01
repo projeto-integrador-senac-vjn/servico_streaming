@@ -16,7 +16,10 @@ const modal = document.getElementById('modal')
 
 export default function ModalDetalhes({id, img}) { 
   const [movie, setMovie] = React.useState();
-  const handleClose = () => setMovie(false);
+  const handleClose = () => {
+    setMovie(false)
+    window.location.reload()
+  };
 
   
   

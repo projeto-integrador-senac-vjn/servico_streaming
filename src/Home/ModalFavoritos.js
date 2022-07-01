@@ -8,7 +8,10 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 function ModalFavoritos({id}) {
   require("./ModalCF.css")
   const [movie ,setMovie] = useState();
-  const handleClose = () => setMovie(false) 
+  const handleClose = () => {
+    setMovie(false)
+    window.location.reload()
+  } 
 
  
 
@@ -19,10 +22,10 @@ function ModalFavoritos({id}) {
     }
     axios.delete(`http://localhost:3002/deletaFavoritos/${obj.idFilme}/${obj.idUser}`)
         .then(function (results) {
-            toast.success("Recarregue a página")
+          window.location.reload()
+          toast.success("Removido")
     })
         .catch(function (error) {
-          toast.error("Erro")
     })
   }
   

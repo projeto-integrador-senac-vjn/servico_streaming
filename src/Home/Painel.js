@@ -4,7 +4,7 @@ import axios from 'axios'
 import "../App.css"
 import ModalFavoritos from "./ModalFavoritos"
 import ModalCurtidos from "./ModalCurtidos"
-import {useNavigate} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 
 
@@ -70,7 +70,7 @@ function Painel() {
 
         {
             favorito == 0 ? 
-            <h2 className='adicione'>Nenhum filme adicionado</h2>
+            <Link to="/home"><button className='buttonAdicione'>Adicionar um filme</button></Link>
             :
             <div>
                 {favorito.map((u, key) => {
@@ -87,7 +87,7 @@ function Painel() {
         
         {
             curtido == 0 ? 
-            <h2 className='adicione'>Nenhum filme adicionado</h2>
+            <Link to="/home"><button className='buttonAdicione'>Adicionar um filme</button></Link>
             :
             <div>
                 {curtido.map((u, key) => {
