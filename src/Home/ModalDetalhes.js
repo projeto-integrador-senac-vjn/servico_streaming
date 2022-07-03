@@ -8,7 +8,7 @@ import StarIcon from '@mui/icons-material/Star';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { toast } from 'react-hot-toast';
-
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 const modal = document.getElementById('modal')
@@ -16,6 +16,7 @@ const modal = document.getElementById('modal')
 
 export default function ModalDetalhes({id, img}) { 
   const [movie, setMovie] = React.useState();
+  const [video, setVideo] = React.useState();
   const handleClose = () => {
     setMovie(false)
     window.location.reload()
@@ -37,14 +38,26 @@ export default function ModalDetalhes({id, img}) {
     }
   }
 
- 
+  const fetchVideo = async() => {
+    if (id) {
+      axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=pt-BR`)
+      .then((res) => {
+        setVideo(res.data.results[0].key)
+        
+      })
+      .catch((error) => {
+        
+      })
+    }
+  }
 
-  
 
-  
 
   React.useEffect(() => {
     fetchData();
+    fetchVideo();
+
+    
    
     
   }, [id]); 
@@ -101,6 +114,7 @@ export default function ModalDetalhes({id, img}) {
                     <FavoriteBorderIcon  onClick={() => avaliar(true)} />                                
               </div>
                     <p className='overview'>{movie.overview}</p>
+                    <a className='featured--watchbutton' target='_blank' href={`https://www.youtube.com/watch?v=${video}`} ><YouTubeIcon className='icon--trailer'/>Trailer</a>
                     
 
             </div>
