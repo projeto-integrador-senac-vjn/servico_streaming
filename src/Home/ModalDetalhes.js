@@ -8,6 +8,7 @@ import StarIcon from '@mui/icons-material/Star';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 
 const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
@@ -33,12 +34,6 @@ export default function ModalDetalhes({id, img}) {
       })
     }
   }
-
- 
-
-  
-
-  
 
   React.useEffect(() => {
     fetchData();

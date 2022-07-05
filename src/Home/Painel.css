@@ -48,7 +48,12 @@
     display: inline-block;
 }
 
-.adicione{
-    text-align: center;
-    margin-bottom: 15px;
+
+.buttonAdicione{
+    padding: 15px;
+    background-color: #141414;
+    color: #fff;
+    border: #fff 2px;
+    margin-left: 850px;
+    cursor: pointer;
 }

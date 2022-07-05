@@ -12,7 +12,6 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 function ModalCurtidos({id}) {
   const [movie ,setMovie] = useState();
   const handleClose = () =>  setMovie(false)
-  const navigate = useNavigate()
 
   const Remover = () => {
     const obj = {
@@ -23,9 +22,9 @@ function ModalCurtidos({id}) {
 
     axios.delete(`http://localhost:3002/deletaCurtidos/${obj.idFilme}/${obj.idUser}`)
       .then(function (response)  {
-          toast.success("Removido, Recarregue a página")
-          navigate("/")
-          navigate("/painel")
+          window.location.reload()
+          toast.success("Removido")
+          
       })
           .catch(function (error) {
            

@@ -19,10 +19,13 @@ function ModalFavoritos({id}) {
     }
     axios.delete(`http://localhost:3002/deletaFavoritos/${obj.idFilme}/${obj.idUser}`)
         .then(function (results) {
-            toast.success("Recarregue a página")
+            window.location.reload()
+            toast.success("Removido")
+              
+            
+            
     })
         .catch(function (error) {
-          toast.error("Erro")
     })
   }
   
