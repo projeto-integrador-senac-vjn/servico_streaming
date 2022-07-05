@@ -49,6 +49,7 @@
 }
 
 
+
 .buttonAdicione{
     padding: 15px;
     background-color: #141414;
@@ -56,4 +57,30 @@
     border: #fff 2px;
     margin-left: 850px;
     cursor: pointer;
+
+
+.buttonAdicione:hover{
+    opacity: 0.7;
+}
+
+.buttonAdicione{
+    background-color: #333;
+    color:white;
+    cursor: pointer;
+    margin-left: 550px;
+    margin-bottom: 10px;
+}
+
+.buttonAdicione
+{
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2;
+
 }

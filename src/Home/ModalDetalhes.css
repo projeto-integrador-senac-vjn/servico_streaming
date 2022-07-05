@@ -73,16 +73,49 @@
     margin: 15px;
 }
 
-.trailer{
-    text-decoration: none;
-    background-color: #ffff;
-    color: #141414;
-    padding: 2px 15px;
-    border-radius: 5px;
-    margin-left: 10px;
-    margin-top: 0px;
-    text-align: center;
+
+
+.featured--buttons{
+    margin-top: 15px;
+}
+
+.featured--watchbutton,
+.featured--mylistbutton
+{
+    display: inline-block;
     font-size: 20px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 10px;
+    opacity: 1;
+    transition: all ease 0.2;
+}
+
+
+.featured--watchbutton:hover,
+.featured--mylistbutton:hover{
+    opacity: 0.7;
+}
+
+.featured--mylistbutton{
+    background-color: #333;
+    color: red;
+    cursor: pointer;
+}
+
+.featured--watchbutton{
+    background-color: #fff;
+    color: #000;
+    margin-left: 15px;
+
+}
+
+.icon--trailer{
+    margin-bottom: -4px;
+    margin-left: -15px;
+    margin-right: 3px;
 }
 
 
@@ -127,12 +160,7 @@
     }
 }
 
-.remove--button{
-    top: 86%;
-    left: 21.5%;
-    position: absolute;
-    color: red;
-    background-color: #141414;
-    padding: 10px 15px 10px 15px;
-}
+
+
+
 

@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import CloseIcon from '@mui/icons-material/Close';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 
 
@@ -12,6 +13,14 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 function ModalCurtidos({id}) {
   const [movie ,setMovie] = useState();
   const handleClose = () =>  setMovie(false)
+
+  const [video, setVideo] = useState()
+  const handleClose = () =>  {
+    setMovie(false)
+    window.location.reload()
+    }  
+  const navigate = useNavigate()
+
 
   const Remover = () => {
     const obj = {
@@ -45,9 +54,23 @@ function ModalCurtidos({id}) {
     }
   }
 
+  const fetchVideo = async() => {
+    if (id) {
+      axios.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=pt-BR`)
+      .then((res) => {
+        setVideo(res.data.results[0].key)
+        
+      })
+      .catch((error) => {
+        
+      })
+    }
+  }
+
 
   React.useEffect(() => {
     fetchData();
+    fetchVideo();
     
   }, [id]);
   
@@ -67,8 +90,12 @@ function ModalCurtidos({id}) {
                     <p className='relevance'>{movie.vote_average} pontos</p> 
                     <p className='release'>{movie.release_date}</p>                              
               </div>
-                    <p className='overview'>{movie.overview}</p>                
-                      <button className='remove--buttonCF' onClick={() => Remover()}>Remover dos Curtidos</button>                   
+                    <p className='overview'>{movie.overview}</p>
+                    <div className='remove--CF'>                   
+                      <a className='featured--watchbutton' target='_blank' href={`https://www.youtube.com/watch?v=${video}`} ><YouTubeIcon className='icon--trailer'/>Trailer</a>
+                      <button className='featured--mylistbutton' onClick={() => Remover()}>Remover</button>
+                    </div>                
+                      
             </div>
        </div>
     )}

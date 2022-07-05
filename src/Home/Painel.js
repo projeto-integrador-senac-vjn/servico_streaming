@@ -70,7 +70,10 @@ function Painel() {
 
         {
             favorito == 0 ? 
+
             <Link to="/home"> <button className='buttonAdicione'>Adicione algum Filme</button></Link>
+
+
             :
             <div>
                 {favorito.map((u, key) => {
@@ -87,7 +90,8 @@ function Painel() {
         
         {
             curtido == 0 ? 
-            <Link to="/home"> <button className='buttonAdicione'>Adicione algum Filme</button></Link>
+            <Link to="/home"><button className='buttonAdicione'>Adicionar um filme</button></Link>
+
             :
             <div>
                 {curtido.map((u, key) => {

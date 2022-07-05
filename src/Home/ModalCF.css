@@ -123,11 +123,16 @@
 }
 
 .remove--buttonCF{
-    margin-left: 15px;
+    margin-right: 15px;
     color: red;
     background-color: #141414;
     padding: 10px 15px 10px 15px;
     cursor: pointer;
+}
+
+.remove--CF{
+    display: flex;
+    justify-content: space-between;
 }
 
 

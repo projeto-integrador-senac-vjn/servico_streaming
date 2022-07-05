@@ -18,8 +18,8 @@ function Cadastro() {
                     toast.success("Cadastrado com sucesso")
                     navigate("/login")
                     
-                }).catch(function (response) {
-                    toast.error("Verifique os campos tente novamente")
+                }).catch(function (err) {
+                    alert(err)
                 })
             }
     }
