@@ -12,9 +12,8 @@ const API_KEY = 'a6325de08416b368b47a70cd06ebf05e'
 
 function ModalCurtidos({id}) {
   const [movie ,setMovie] = useState();
-  const handleClose = () =>  setMovie(false)
-
   const [video, setVideo] = useState()
+  
   const handleClose = () =>  {
     setMovie(false)
     window.location.reload()
